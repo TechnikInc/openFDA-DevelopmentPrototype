@@ -15,7 +15,7 @@ deploy:
   bucket: "technikfda.bucket.s3"
   key: latest/MyApp.zip
   application: technickFDADemoApplicationGroup
-  deployment_group: technikfda:technikfda
+  deployment_group: technikfda
 notifications:
   email:
   - technikfdacode@gmail.com
