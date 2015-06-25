@@ -14,4 +14,6 @@ before_install:
 script:
 - ./gradlew awsRevision
 
- 
+notifications:
+  email:
+  - technikfdacode@gmail.com
