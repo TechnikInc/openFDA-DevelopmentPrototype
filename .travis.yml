@@ -5,5 +5,7 @@ jdk:
 notifications:
   email:
   - technikfdacode@gmail.com
+
+script: gradle war
  
  
