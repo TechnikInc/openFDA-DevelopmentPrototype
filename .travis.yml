@@ -8,16 +8,14 @@ branches:
 
 script: gradle awsPackage
 
-
 deploy:
   provider: codedeploy
-  access_key_id: AKIAJNDRC5LUHERE4YEQ
-  secret_access_key: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
-  bucket: 'technikfda.bucket.s3'
-  key: technikfda.zip
-  deployment-group: 'technickFDADemoApplicationGroup'
-  instance-group: 'technikfda:technikfda'
-
+  access_key_id: "AKIAJNDRC5LUHERE4YEQ"
+  secret_access_key: "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"
+  bucket: "technikfda.bucket.s3"
+  key: latest/MyApp.zip
+  application: technickFDADemoApplicationGroup
+  deployment_group: technikfda:technikfda
 notifications:
   email:
   - technikfdacode@gmail.com
