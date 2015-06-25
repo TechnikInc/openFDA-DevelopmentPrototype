@@ -2,10 +2,12 @@ language: java
 jdk:
   - oraclejdk7
   
+script: gradle war
+
 notifications:
   email:
   - technikfdacode@gmail.com
 
-script: gradle war
+
  
  
