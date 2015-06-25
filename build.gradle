@@ -1,3 +1,4 @@
+// packaged as jerryRun, jettuRunWar or  war application
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
@@ -9,6 +10,10 @@ targetCompatibility = 1.7
 
 version = '0.0.1'
 
+// warfile name
+war {
+  archiveName = 'technikfda.war'
+}
 
 repositories {
     mavenLocal()
@@ -27,15 +32,16 @@ dependencies {
 	compile 'org.springframework:spring-web:4.1.6.RELEASE'
 	compile 'com.fasterxml.jackson.core:jackson-databind:2.1.4'
 	compile 'javax.validation:validation-api:1.0.0.GA'
-	compile 'javax.validation:validation-api:1.0.0.GA'
 	compile 'org.hibernate:hibernate-validator:4.2.0.Final'
 
 	testCompile 'junit:junit:4.12'
 	testCompile "org.mockito:mockito-core:1.+"
 	
+	
+	
 }
 
-// Embeded Jetty for testing
+// Embeded Jetty for testing locally
 jettyRun{
 	contextPath = "technikfda"
 	httpPort = 8080
@@ -48,10 +54,8 @@ jettyRunWar{
 
 //For Eclipse IDE only
 eclipse {
-
   wtp {
     component {
-      
       //define context path, default to project folder name
       contextPath = 'technikfda'
       
@@ -64,3 +68,25 @@ task wrapper(type: Wrapper) {
 	gradleVersion = '2.3'
 }
 
+
+// build/libs directory is created Zip file to ship to AWS
+// For AWS deployments, need to copy the appspec file 
+task copyAWSAppSpec(type: Copy) {
+  from 'appspec.yml'
+  into 'build/libs'
+}
+
+// For AWS deployments, need to copy the tomcat_start/tomcat_stop scripts 
+task copyTomcatScripts(type: Copy) {
+  from 'tomcatscripts'
+  into 'build/libs'
+}
+// build the aws deployable package
+task awsPackage(type: Zip) {
+  from 'build/libs'
+}
+
+// build/libs directory is created Zip file to ship to AWS
+awsPackage.dependsOn war
+awsPackage.dependsOn copyAWSAppSpec
+awsPackage.dependsOn copyTomcatScripts
