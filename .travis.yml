@@ -1,5 +1,9 @@
 language: java
 jdk:
   - oraclejdk7
+  
+notifications:
+  email:
+  - technikfdacode@gmail.com
  
  
