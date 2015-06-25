@@ -14,8 +14,8 @@ deploy:
   secret_access_key: "GlFKy4ZHiay1WeBl7KY2IaYtacb8ZqYNplouGBie"
   bucket: "technikfda.bucket.s3"
   key: latest/MyApp.zip
-  application: technickFDADemoApplicationGroup
-  deployment_group: technikfda
+  application: technickFDADemoApplication
+  deployment_group:  technickFDADemoApplicationGroup
 notifications:
   email:
   - technikfdacode@gmail.com
