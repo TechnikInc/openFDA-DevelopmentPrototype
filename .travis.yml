@@ -13,8 +13,8 @@ deploy:
   bucket: technikfda.bucket.s3
   key: latest/MyApp.zip
   bundle_type: zip
-  application: technickFDADemoApplication
-  deployment_group: technickFDADemoApplicationGroup
+  application: MyApp
+  deployment_group: MyDeploymentGroup
   on: *2
 notifications:
   email:
