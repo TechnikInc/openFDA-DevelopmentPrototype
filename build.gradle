@@ -81,9 +81,15 @@ task copyTomcatScripts(type: Copy) {
   from 'tomcatscripts'
   into 'build/libs'
 }
+
+task grandExePermissionsToScripts(type: Exec) { 
+   commandLine 'chmod', '+x', 'build/libs/*.sh'    
+} 
+
 // build the aws deployable package
 task awsPackage(type: Zip) {
   from 'build/libs'
+  archiveName = 'MyApp.zip'
 }
 
 println awsPackage.archiveName
@@ -94,3 +100,4 @@ println relativePath(awsPackage.archivePath)
 awsPackage.dependsOn war
 awsPackage.dependsOn copyAWSAppSpec
 awsPackage.dependsOn copyTomcatScripts
+awsPackage.dependsOn grandExePermissionsToScripts
