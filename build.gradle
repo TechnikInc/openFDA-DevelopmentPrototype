@@ -86,9 +86,9 @@ task awsPackage(type: Zip) {
   from 'build/libs'
 }
 
-println myZip.archiveName
-println relativePath(myZip.destinationDir)
-println relativePath(myZip.archivePath)
+println awsPackage.archiveName
+println relativePath(awsPackage.destinationDir)
+println relativePath(awsPackage.archivePath)
 
 // build/libs directory is created Zip file to ship to AWS
 awsPackage.dependsOn war
