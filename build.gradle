@@ -82,7 +82,7 @@ task copyTomcatScripts(type: Copy) {
   into 'build/libs'
 }
 // build the aws deployable package
-task myZip(type: Zip) {
+task awsPackage(type: Zip) {
   from 'build/libs'
 }
 
@@ -91,6 +91,6 @@ println relativePath(myZip.destinationDir)
 println relativePath(myZip.archivePath)
 
 // build/libs directory is created Zip file to ship to AWS
-myZip.dependsOn war
-myZip.dependsOn copyAWSAppSpec
-myZip.dependsOn copyTomcatScripts
+awsPackage.dependsOn war
+awsPackage.dependsOn copyAWSAppSpec
+awsPackage.dependsOn copyTomcatScripts
