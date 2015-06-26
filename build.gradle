@@ -76,15 +76,17 @@ task copyAWSAppSpec(type: Copy) {
   into 'build/libs'
 }
 
+
+task grandExePermissionsToScripts(type: Exec) { 
+   commandLine 'chmod', '+x', 'tomcatscripts/tomcat_start.sh'
+   commandLine 'chmod', '+x', 'tomcatscripts/tomcat_stop_clean.sh'   
+} 
 // For AWS deployments, need to copy the tomcat_start/tomcat_stop scripts 
 task copyTomcatScripts(type: Copy) {
   from 'tomcatscripts'
   into 'build/libs'
 }
 
-task grandExePermissionsToScripts(type: Exec) { 
-   commandLine 'chmod', '+x', 'build/libs/*.sh'    
-} 
 
 // build the aws deployable package
 task awsPackage(type: Zip) {
@@ -98,6 +100,6 @@ println relativePath(awsPackage.archivePath)
 
 // build/libs directory is created Zip file to ship to AWS
 awsPackage.dependsOn war
+awsPackage.dependsOn grandExePermissionsToScripts
 awsPackage.dependsOn copyAWSAppSpec
 awsPackage.dependsOn copyTomcatScripts
-awsPackage.dependsOn grandExePermissionsToScripts
