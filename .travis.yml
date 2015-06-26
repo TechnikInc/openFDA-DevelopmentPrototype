@@ -1,21 +1,33 @@
 language: java
 jdk:
-  - oraclejdk7
+- oraclejdk7
 branches:
   except:
-    - /^build-[0-9a-z\-]*/
-
-
+  - "/^build-[0-9a-z\\-]*/"
 script: gradle awsPackage
-
 deploy:
-  provider: codedeploy
-  access_key_id: "AKIAJNDRC5LUHERE4YEQ"
-  secret_access_key: "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"
-  bucket: "technikfda.bucket.s3"
-  key: latest/MyApp.zip
-  application: technickFDADemoApplication
-  deployment_group:  technickFDADemoApplicationGroup
+- provider: s3
+  access_key_id: AKIAIN4EOXPZMBUAO44Q
+  secret_access_key: &1
+    secure: A9vwEkdTGU5PdLeBTjpoiJko1jAMqa1bYHmILD8rK6f428lMyhaBXbeYv6ALbvxpF7OYJ+fdPGhRRRG6UU37b29VA1ClE8opwUQUW/GPHPSQtXV1+2c0Vi3fKcVEJxxnCbOzoH4G/nJaRag3tvmHrbgUZ50gk+oQI8mG9sdjEtE+2se58cusB72m1g8BJyljawYSS4I9c6V5U6wDr6sLD3PfUPWCkPgKtYKYbTxxZqDg1Hht6QNxpWuSgkSu4WkKMpz1m+ceGLZM6W0dE+Pdbf3hsBlGI5Bohuv9NFyj16cdTMBH3oFpMunsaIeh3cLu1sAi4ahyRAqumdLls5BfPrfNv96FVvweZU2sWZBrml8FAscEvwA3mgG0lSnL8kfWTuh9BzewqS5v+BptLlsL2vptjpT8oRkSqZWCrrM6BUgubmtxdrqRMJnnCSradbUIhZGYVLt6ogJJVFdNQ4r/o6Wvy3UcJwL4B6c228cFQ+6V/vcB1W4PNIqsi6dEwY0HyivDk+Q/0Y97T6Vx6Vjl2jabTkdIO+CHtWLKqie51HeRhOl7lpkDKfwkz6rd5Qox29Hjihzb+swMUd1viDW6n7z8nSZzPWi4IxkMlJBfkzpcUeggNmuRNir3JVHyrP8I9d7L9KVimxhEzhwm0n0EXCRCFWudGYqSGrNORgbz4e0=
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
+    repo: krishnachaganti/technikfda
+  bucket: technikfda.bucket.s3
+  upload_dir: latest
+- provider: codedeploy
+  access_key_id: AKIAIN4EOXPZMBUAO44Q
+  secret_access_key: *1
+  bucket: technikfda.bucket.s3
+  key: latest/MuApp.zip
+  bundle_type: zip
+  application: technikfda
+  deployment_group: technickFDADemoApplicationGroup
+  on: *2
 notifications:
   email:
   - technikfdacode@gmail.com
+before_deploy:
+- mkdir -p dpl_cd_upload
+- mv MuApp.zip dpl_cd_upload/MuApp.zip
