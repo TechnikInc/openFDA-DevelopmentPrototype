@@ -1,3 +1,5 @@
 #!/bin/bash
-# Start Tomcat.
-sudo service tomcat7  start
+
+# Stop Tomcat first
+/etc/init.d/tomcat7 start
+

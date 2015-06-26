@@ -15,6 +15,7 @@ files:
 hooks:
  ApplicationStop:
    - location: tomcat_stop_clean.sh
- # Now we can start up Tomcat once again
+# Now we can start up Tomcat once again
  ApplicationStart:
    - location: tomcat_start.sh
+     runas: codedeployuser
