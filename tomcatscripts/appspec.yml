@@ -18,4 +18,3 @@ hooks:
 # Now we can start up Tomcat once again
  ApplicationStart:
    - location: tomcat_start.sh
-     runas: codedeployuser
