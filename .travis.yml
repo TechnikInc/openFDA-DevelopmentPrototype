@@ -20,9 +20,9 @@ deploy:
   access_key_id: AKIAIN4EOXPZMBUAO44Q
   secret_access_key: *1
   bucket: technikfda.bucket.s3
-  key: latest/MuApp.zip
+  key: latest/MyApp.zip
   bundle_type: zip
-  application: technikfda
+  application: technickFDADemoApplication
   deployment_group: technickFDADemoApplicationGroup
   on: *2
 notifications:
