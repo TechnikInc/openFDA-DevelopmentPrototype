@@ -20,7 +20,7 @@ deploy:
   access_key_id: AKIAIN4EOXPZMBUAO44Q
   secret_access_key: *1
   bucket: technikfda.bucket.s3
-  key: build/distributions/technikfda-0.0.1.zip
+  key: latest/MyApp.zip
   bundle_type: zip
   application: technickFDADemoApplication
   deployment_group: technickFDADemoApplicationGroup
@@ -30,4 +30,4 @@ notifications:
   - technikfdacode@gmail.com
 before_deploy:
 - mkdir -p dpl_cd_upload
-- mv build/distributions/technikfda-0.0.1.zip dpl_cd_upload/MyApp.zip
+- mv latest/MyApp.zip dpl_cd_upload/MyApp.zip
