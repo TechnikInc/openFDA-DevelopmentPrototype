@@ -55,12 +55,7 @@ nav a{
 
 #divMasterDetailWrapper
 {
-    width: 95%;
     height: 600px;
-    border: 1px solid Green;
-    padding: 3px;
-    margin: 15px 5px 15px 30px;
-    font-family: Arial;
     font-size: 12px;
 }
 #divMasterView
