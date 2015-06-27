@@ -29,6 +29,30 @@ footer p a, footer p a:hover, footer p a:focus{
   color: #00a8e4;
 }
 
+.header-container {
+    border-bottom: 20px solid #335087;
+}
+
+.footer-container,
+.main aside {
+    border-top: 20px solid #335087;
+}
+
+.header-container,
+.footer-container,
+.main aside {
+    background: #efefef;
+}
+
+.title {
+    color: #004b9d;
+}
+
+nav a{
+  background-color: #ddd;
+  color: #004b9d;
+}
+
 #divMasterDetailWrapper
 {
     width: 95%;
