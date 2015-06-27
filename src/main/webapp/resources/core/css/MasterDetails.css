@@ -151,14 +151,11 @@ nav a{
 
 .cssOneOrderRecord
 {
-    width: 90%;
     position: relative;         /* Very important, for appending child <div>s with absolute positioning later */
-    padding: 5px;
-    border-bottom: 1px solid white;
+    padding: 0;
     background-color: white;
-    border: 1px solid #404040;
+    border: 1px solid #ccc;
     margin: 15px 20px 15px 20px;
-    overflow: no-display;
 }
 .cssOneOrderHeader {
     height: 40px;
@@ -166,23 +163,19 @@ nav a{
     width: 100%;
     position: relative;
     margin: 0px 0px 4px 0px;
-
-    background-image: url(icnOrder.png);
-    background-position: 10px 5px;
-    background-repeat: no-repeat;
 }
 .cssOrderID
 {
     position:absolute;
-    left: 75px;
-    top: 10px;
+    left: 14px;
+    top: 12px;
     font-weight: bold;
 }
 .cssOrderDate
 {
     position:absolute;
     left: 300px;
-    top: 10px;
+    top: 12px;
 }
 .cssOneProductRecord
 {
