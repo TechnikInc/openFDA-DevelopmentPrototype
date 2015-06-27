@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link href="${masterDetailCss}" rel="stylesheet" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="./resources/core/images/favicon.png">
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script src="${masterDetailCtrl}" type="text/javascript"></script>
   </head>
@@ -42,7 +42,6 @@
                             <div class="cssCompanyCity">{{country.count}}</div>
                             <img src="{{country.imageSrc}}"
                                title="{{country.countryName}}"
-                               alt="Country Flag"
                                class="cssCustomerIcon" />
                         </div>
                     </div>
