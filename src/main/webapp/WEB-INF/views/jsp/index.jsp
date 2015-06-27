@@ -4,7 +4,6 @@
   <head>
     <meta charset="utf-8">
     <title>OpenFDA Adverse Drug Event Viewer by Technik Inc.</title>
-    <spring:url value="/resources/core/css/MasterDetails.css" var="masterDetailCss" />
   	<spring:url value="/resources/core/js/MasterDetailCtrl.js" var="masterDetailCtrl" />	
   	<spring:url value="/resources/core/images/icnOffice.png" var="icnOfficImage" />
   	<link href="${masterDetailCss}" rel="stylesheet" />
@@ -13,6 +12,7 @@
     <link rel="stylesheet" href="./resources/core/css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <spring:url value="/resources/core/css/MasterDetails.css" var="masterDetailCss" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="./resources/core/images/favicon.png">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
