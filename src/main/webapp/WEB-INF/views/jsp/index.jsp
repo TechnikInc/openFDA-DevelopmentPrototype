@@ -41,8 +41,8 @@
                             <div class="cssCompanyName">{{country.term.toUpperCase()}} - {{country.countryName}}</div>
                             <div class="cssCompanyCity">{{country.count}}</div>
                             <img src="{{country.imageSrc}}"
-                               width="16" height="16"
-                               title="This is a tooltip for the country: {{country.countryName}}" 
+                               title="{{country.countryName}}"
+                               alt="Country Flag"
                                class="cssCustomerIcon" />
                         </div>
                     </div>
