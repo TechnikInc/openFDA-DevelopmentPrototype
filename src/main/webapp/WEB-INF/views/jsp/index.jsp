@@ -7,7 +7,7 @@
     <spring:url value="/resources/core/css/MasterDetails.css" var="masterDetailCss" />
   	<spring:url value="/resources/core/js/MasterDetailCtrl.js" var="masterDetailCtrl" />	
   	<spring:url value="/resources/core/images/icnOffice.png" var="icnOfficImage" />
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./resources/core/css/normalize.min.css">
     <link rel="stylesheet" href="./resources/core/css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -27,51 +27,54 @@
         </div>
         <div class="main-container">
             <div class="main wrapper clearfix">
-                <div 	id="divMasterDetailWrapper" 
-                		ng-controller="MasterDetailCtrl" 
-                		style="position:relative;">
-                    <div style="left:-30px;top:-1px;position:absolute;">
-                    </div>
-                    <div id="divMasterView" >
-                       <div id="{{country.term}}" 
-                       			class="cssOneCompanyRecord" 
-                       			ng-class="{cssCompanySelectedRecord: country.term == selectedCountry}" 
-                       			ng-repeat="country in countries" 
-                       			ng-click="selectCountry(country);">
-                            <div class="cssCompanyName">{{country.term.toUpperCase()}} - {{country.countryName}}</div>
-                            <div class="cssCompanyCity">{{country.count}}</div>
-                            <img src="{{country.imageSrc}}"
-                               title="{{country.countryName}}"
-                               class="cssCustomerIcon" />
+                <div class="panel panel-default">
+                    <div class="panel-heading">Adverse Drug Event Reports by Country</div>
+                    <div class="panel-body">
+                        <div 	id="divMasterDetailWrapper" 
+                        		ng-controller="MasterDetailCtrl" 
+                        		style="position:relative;">
+                            <div id="divMasterView" >
+                               <div id="{{country.term}}" 
+                               			class="cssOneCompanyRecord" 
+                               			ng-class="{cssCompanySelectedRecord: country.term == selectedCountry}" 
+                               			ng-repeat="country in countries" 
+                               			ng-click="selectCountry(country);">
+                                    <div class="cssCompanyName">{{country.term.toUpperCase()}} - {{country.countryName}}</div>
+                                    <div class="cssCompanyCity">{{country.count}}</div>
+                                    <img src="{{country.imageSrc}}"
+                                       title="{{country.countryName}}"
+                                       class="cssCustomerIcon" />
+                                </div>
+                            </div>
+                            <div id="divDetailView">
+                                <div 	id="Patient Reaction_{{incident.receiptdate}}" 
+                                		ng-repeat="incident in listOfIncidents" 
+                                		class="cssOneOrderRecord">
+                                    <div class="cssOneOrderHeader">
+                                        <div class="cssOrderID">Safety Report # {{incident.safetyreportid}}</div>
+                                        <div class="cssOrderDate">Incident Receipt Date: {{incident.receiptdate}}</div>
+                                    </div>
+                                    <div class="cssOneProductRecord" 
+                                    	ng-repeat='reaction in incident.patient.reaction' 
+                                    	ng-class-odd="'cssProductOdd'" 
+                                    	ng-class-even="'cssProductEven'">
+                                        <div class="cssOneProductQty">{{reaction.reactionmeddrapt}}</div>
+                                        <div class="cssOneProductName">{{reaction.reactionmeddraversionpt}}</div>
+                                        <div class="cssOneProductPrice">{{reaction.reactionoutcome}}</div>
+                                    </div>   
+                                    <div class="cssOneProductRecord" 
+                                    	ng-repeat='drug in incident.patient.drug' 
+                                    	ng-class-odd="'cssProductOdd'" 
+                                    	ng-class-even="'cssProductEven'">
+                                        <div class="cssOneProductQty">{{drug.medicinalproduct}}</div>
+                                        <div class="cssOneProductName">{{drug.drugindication}}</div>
+                                        <div class="cssOneProductPrice">{{drug.drugdosageform}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                               
                         </div>
                     </div>
-                    <div id="divDetailView">
-                        <div 	id="Patient Reaction_{{incident.receiptdate}}" 
-                        		ng-repeat="incident in listOfIncidents" 
-                        		class="cssOneOrderRecord">
-                            <div class="cssOneOrderHeader">
-                                <div class="cssOrderID">Safety Report # {{incident.safetyreportid}}</div>
-                                <div class="cssOrderDate">Incident Receipt Date: {{incident.receiptdate}}</div>
-                            </div>
-                            <div class="cssOneProductRecord" 
-                            	ng-repeat='reaction in incident.patient.reaction' 
-                            	ng-class-odd="'cssProductOdd'" 
-                            	ng-class-even="'cssProductEven'">
-                                <div class="cssOneProductQty">{{reaction.reactionmeddrapt}}</div>
-                                <div class="cssOneProductName">{{reaction.reactionmeddraversionpt}}</div>
-                                <div class="cssOneProductPrice">{{reaction.reactionoutcome}}</div>
-                            </div>   
-                            <div class="cssOneProductRecord" 
-                            	ng-repeat='drug in incident.patient.drug' 
-                            	ng-class-odd="'cssProductOdd'" 
-                            	ng-class-even="'cssProductEven'">
-                                <div class="cssOneProductQty">{{drug.medicinalproduct}}</div>
-                                <div class="cssOneProductName">{{drug.drugindication}}</div>
-                                <div class="cssOneProductPrice">{{drug.drugdosageform}}</div>
-                            </div>
-                        </div>
-                    </div>
-                       
                 </div>
             </div>
         </div>

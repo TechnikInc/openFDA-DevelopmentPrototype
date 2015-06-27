@@ -57,6 +57,7 @@ nav a{
 {
     height: 600px;
     font-size: 12px;
+    border: 1px solid #ddd;
 }
 #divMasterView
 {
