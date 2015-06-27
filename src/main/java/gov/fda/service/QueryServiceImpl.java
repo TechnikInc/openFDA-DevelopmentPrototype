@@ -40,19 +40,17 @@ public class QueryServiceImpl implements QueryService{
 	
 	protected List<CountryNameCode> countries;
 	
-	static{
-		// FDA data does not have unique country codes and names as per API.
-		// so we query the country code names from http://data.okfn.org/data/core/country-list/r/data.json
-		// these will be loaded in  
-
-	}
-	
 	
 	private static final Logger logger = LoggerFactory.getLogger(QueryServiceImpl.class);
 	
-	private void loadCountriesStaticData()
+	/*
+	 * 	FDA data does not have unique country codes and names as per API.
+	 *  so we query the country code names from http://data.okfn.org/data/core/country-list/r/data.json these will be loaded in 
+	 *  countries instance
+	 */
+	public void loadCountriesStaticData()
 	{
-		if(countries == null)
+		if(countries == null || countries.size() == 0)
 		   countries = CountryNameCodeRefresher.getCountries();
 	}
 	
@@ -125,17 +123,5 @@ public class QueryServiceImpl implements QueryService{
 		return wrapper;
 		
 	}
-	
-	
-	  
-	
-	public static void main(String[] args)
-	{
-		QueryServiceImpl qis = new QueryServiceImpl();
-	    qis.getIncidentsByCountry("US", 2, 2);
-		//qis.getNumberOfIncidentsByCounty();
-	}
-	
-	
 
 }
