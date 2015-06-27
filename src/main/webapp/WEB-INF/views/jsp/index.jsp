@@ -77,5 +77,19 @@
                 </div>
             </div>
         </div>
+        <div class="footer-container">
+            <footer class="wrapper">
+                <img src="./resources/core/images/technik_logo.png" alt="Technik Logo" class="technik_logo" />
+                <p>
+                  Designed & developed by <a href="http://www.technikinc.com" target="_blank">Technik, Inc.</a>
+                </p>
+                <p>
+                    12950 Worldgate Drive, Suite 230, Herndon, VA 20170
+                </p>
+                <p>
+                    Data from <a href="https://open.fda.gov" target="_blank">openFDA</a>
+                </p>
+            </footer>
+        </div>
   </body>
 </html>

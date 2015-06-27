@@ -60,7 +60,7 @@ nav a{
 #divMasterDetailWrapper
 {
     height: 80%;
-    height: calc(100% - 180px);
+    height: calc(100% - 230px);
     font-size: 12px;
 }
 #divMasterView
@@ -105,7 +105,7 @@ nav a{
 .cssCompanyName
 {
     position:absolute;
-    top: 14px;
+    top: 15px;
     left: 40px;
 }
 .cssCompanySelectedRecord .cssCompanyName{
