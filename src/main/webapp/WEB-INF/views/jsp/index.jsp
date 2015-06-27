@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <title>FDA/Technik, Inc Data Fusion Example</title>
     <spring:url value="/resources/core/css/MasterDetails.css" var="masterDetailCss" />
-	<spring:url value="/resources/core/js/MasterDetailCtrl.js" var="masterDetailCtrl" />	
-	<spring:url value="/resources/core/images/icnOffice.png" var="icnOfficImage" />
-	<link href="${masterDetailCss}" rel="stylesheet" />
-     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-     <script src="${masterDetailCtrl}" type="text/javascript"></script>
+  	<spring:url value="/resources/core/js/MasterDetailCtrl.js" var="masterDetailCtrl" />	
+  	<spring:url value="/resources/core/images/icnOffice.png" var="icnOfficImage" />
+  	<link href="${masterDetailCss}" rel="stylesheet" />
+    <link rel="shortcut icon" href="/resources/core/images/favicon.ico">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="${masterDetailCtrl}" type="text/javascript"></script>
   </head>
   <body>
 	  <h1>Technik - FDA Incidents  by Country View</h1>
