@@ -53,11 +53,14 @@ nav a{
   color: #004b9d;
 }
 
+.panel-body{
+    padding: 0;
+}
+
 #divMasterDetailWrapper
 {
     height: 600px;
     font-size: 12px;
-    border: 1px solid #ddd;
 }
 #divMasterView
 {
@@ -71,17 +74,6 @@ nav a{
 #divDetailView
 {
     height: 600px;
-
-    /* Fadey background CSS, created with: http://www.colorzilla.com/gradient-editor/ */
-    background: #c6ffc6; /* Old browsers */
-    background: -moz-linear-gradient(top,  #c6ffc6 0%, #f2fff2 51%, #c6ffc6 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c6ffc6), color-stop(51%,#f2fff2), color-stop(100%,#c6ffc6)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #c6ffc6 0%,#f2fff2 51%,#c6ffc6 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #c6ffc6 0%,#f2fff2 51%,#c6ffc6 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #c6ffc6 0%,#f2fff2 51%,#c6ffc6 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #c6ffc6 0%,#f2fff2 51%,#c6ffc6 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6ffc6', endColorstr='#c6ffc6',GradientType=0 ); /* IE6-9 */
-
     padding: 0;
     overflow-y: auto;
 }
