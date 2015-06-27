@@ -92,6 +92,7 @@ nav a{
     height: 47px;
     position: relative;         /* Very important, for appending child <div>s with absolute positioning later */
     border-bottom: 1px solid #ddd;
+    background-color: #fff;
 }
 .cssOneCompanyRecord:hover
 {
@@ -104,7 +105,7 @@ nav a{
 .cssCompanyName
 {
     position:absolute;
-    top: 5px;
+    top: 14px;
     left: 40px;
 }
 .cssCompanySelectedRecord .cssCompanyName{
@@ -131,9 +132,10 @@ nav a{
 }
 .cssCustomerIcon
 {
-    position:absolute;
-    top: 12px;
-    left: 7px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 7px;
     width: 24px;
 }
 
