@@ -59,13 +59,14 @@ nav a{
 
 #divMasterDetailWrapper
 {
-    height: 600px;
+    height: 80%;
+    height: calc(100% - 180px);
     font-size: 12px;
 }
 #divMasterView
 {
     width: 300px;
-    height: 600px;
+    height: 100%
     background-color: #E0E0E0;
     margin-right: 5px;
     overflow-y: auto;
@@ -73,7 +74,7 @@ nav a{
 }
 #divDetailView
 {
-    height: 600px;
+    height: 100%
     padding: 0;
     overflow-y: auto;
 }
@@ -89,25 +90,25 @@ nav a{
     */
 .cssOneCompanyRecord {
     height: 47px;
-    width: 98%;
     position: relative;         /* Very important, for appending child <div>s with absolute positioning later */
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #ddd;
 }
 .cssOneCompanyRecord:hover
 {
-    background-color: yellow;
+    background-color: #cde6fa;
     cursor: pointer;
 }
 .cssCompanySelectedRecord {
-    /*  If this Company record has been selected, we'll display a Red vertical bar next to it */
-    border-left: 2px solid Red;
-    background-color: white;
+    background-color: #1e69a2;
 }
 .cssCompanyName
 {
     position:absolute;
     top: 5px;
     left: 40px;
+}
+.cssCompanySelectedRecord .cssCompanyName{
+    color: #fff;
 }
 .cssCompanyCity
 {
