@@ -39,7 +39,7 @@
                                			ng-class="{cssCompanySelectedRecord: country.term == selectedCountry}" 
                                			ng-repeat="country in countries" 
                                			ng-click="selectCountry(country);">
-                                    <div class="cssCompanyName">{{country.countryName}} ({{country.count}})</div>
+                                    <div class="cssCompanyName">{{country.countryName}} ({{country.count}})/({{country.totalIncidents}})</div>
                                      <img src="{{country.imageSrc}}"
                                        title="{{country.countryName}}"
                                        class="cssCustomerIcon" />
@@ -89,7 +89,11 @@
                 <p>
                     Data from <a href="https://open.fda.gov" target="_blank">openFDA</a>
                 </p>
+                <p ng-controller="MasterDetailCtrl">
+					<span> Dataset Date: {{fdaDatasetDate}}</span>
+                </p>
             </footer>
+            
         </div>
   </body>
 </html>
