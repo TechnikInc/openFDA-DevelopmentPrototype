@@ -97,11 +97,11 @@ and (max-device-width : 736px){
 
     #divMasterView{
       width: 100%;
-      height: 163px;
+      height: 170px;
       margin-right: 0;
       overflow-y: auto;
       float: none;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 7px solid #ddd;
     }
 
     #divDetailView{
