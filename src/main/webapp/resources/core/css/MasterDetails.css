@@ -158,24 +158,26 @@ nav a{
     margin: 15px 20px 15px 20px;
 }
 .cssOneOrderHeader {
-    height: 40px;
+    height: 30px;
     background-color: #E0E0E0;
     width: 100%;
     position: relative;
-    margin: 0px 0px 4px 0px;
 }
 .cssOrderID
 {
     position:absolute;
     left: 14px;
-    top: 12px;
+    top: 7px;
     font-weight: bold;
+}
+.cssOrderID .received{
+    font-weight: normal;
 }
 .cssOrderDate
 {
     position:absolute;
     left: 300px;
-    top: 12px;
+    top: 7px;
 }
 .cssOneProductRecord
 {
@@ -187,20 +189,20 @@ nav a{
 .cssOneProductQty
 {
     position:absolute;
-    left: 30px;
+    left: 14px;
     top: 5px;
 }
 .cssOneProductName
 {
     position:absolute;
-    left: 100px;
+    left: 260px;
     top: 5px;
 }
 .cssOneProductPrice
 {
     position:absolute;
-    left: 300px;
-    top: 7px;
+    left: 570px;
+    top: 5px;
 }
 .cssOneProductSubtotal {
     position:absolute;
