@@ -60,6 +60,7 @@ function ($scope, $http, $location) {
 	$scope.currentServer = $location.protocol()+"://"+$location.host()+":"+$location.port();
     //  We'll load our list of Countries from our JSON Web Service into this variable
     $scope.listOfCountrys = null;
+    
 
     //  When the user selects a "Country" from our MasterView list, we'll set the following variable.
     $scope.selectedCountry = null;
@@ -88,10 +89,26 @@ function ($scope, $http, $location) {
         //  If the user clicks on a <div>, we can get the ng-click to call this function, to set a new selected Country.
         $scope.selectedCountry = val.term;
         $scope.loadIncidents();
+        $scope.changeDrugCharacterInfo();
+    }
+    
+    $scope.getDrugCharacter = function(value){
+       //alert("Value :"+value);
+    	switch(value)
+    	{
+	    	case "1":
+	    		 return 'Suspect drug';
+	    	case "2":
+	    		return 'Concomitant drug';
+	    	case "3":
+	    		return 'Interacting drug';
+	    	default: 
+	    		return 'UNKNOWN';
+    	}
     }
 
     $scope.loadIncidents = function () {
-        //  Reset our list of Incidents  (when binded, this'll ensure the previous list of orders disappears from the screen while we're loading our JSON data)
+        //  Reset our list of Incidents  (when binded, this'll ensure the previous list of incidents disappears from the screen while we're loading our JSON data)
         $scope.listOfIncidents = null;
         var limit = 10;
         var skip = 20;
@@ -103,6 +120,6 @@ function ($scope, $http, $location) {
                 })
                 .error(function (data, status, headers, config) {
                     $scope.errorMessage = "Couldn't load the list of Incidents, error # " + status;
-                });
+                });        
     }
 });

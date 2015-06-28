@@ -39,7 +39,7 @@
                                			ng-class="{cssCompanySelectedRecord: country.term == selectedCountry}" 
                                			ng-repeat="country in countries" 
                                			ng-click="selectCountry(country);">
-                                    <div class="cssCompanyName">{{country.countryName}} ({{country.count}})/({{country.totalIncidents}})</div>
+                                    <div class="cssCompanyName">{{country.countryName}} ({{country.count}})</div>
                                      <img src="{{country.imageSrc}}"
                                        title="{{country.countryName}}"
                                        class="cssCustomerIcon" />
@@ -57,7 +57,7 @@
                                         <div class="incident_heading">Drugs</div>
                                         <div class="incident_drug_items" 
                                           ng-repeat='drug in incident.patient.drug'>
-                                            <div class="incident_drug_item">{{drug.medicinalproduct}} ({{drug.drugcharacterization}})</div>
+                                            <div class="incident_drug_item">{{drug.medicinalproduct}} ({{getDrugCharacter(drug.drugcharacterization)}})</div>
                                         </div>
                                       </div>
                                       <div class="incident_reactions">
