@@ -3,6 +3,7 @@
 <html ng-app="technikFDAApp">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>OpenFDA Adverse Drug Event Viewer by Technik Inc.</title>
     <spring:url value="/resources/core/css/MasterDetails.css" var="masterDetailCss" />
   	<spring:url value="/resources/core/js/MasterDetailCtrl.js" var="masterDetailCtrl" />	
