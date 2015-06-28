@@ -97,11 +97,11 @@ function ($scope, $http, $location) {
     	switch(value)
     	{
 	    	case "1":
-	    		 return 'Suspect drug';
+	    		 return 'Suspect';
 	    	case "2":
-	    		return 'Concomitant drug';
+	    		return 'Concomitant';
 	    	case "3":
-	    		return 'Interacting drug';
+	    		return 'Interacting';
 	    	default: 
 	    		return 'UNKNOWN';
     	}
