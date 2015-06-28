@@ -30,6 +30,15 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Adverse Drug Event Reports by Country</div>
                     <div class="panel-body">
+                        <div class="search_bar">
+                            <form class="form-inline">
+                              <div class="form-group">
+                                <label class="sr-only" for="search_brand">Drug Name</label>
+                                <input type="text" class="form-control" id="search_drug" placeholder="Drug name (e.g. aspirin)" value="Aspirin">
+                              </div>
+                              <button type="submit" class="btn btn-default">Search</button>
+                            </form>
+                        </div>
                         <div 	id="divMasterDetailWrapper" 
                         		ng-controller="MasterDetailCtrl" 
                         		style="position:relative;">
@@ -54,14 +63,14 @@
                                     </div>
                                     <div class="incident_table">
                                       <div class="incident_drugs">
-                                        <div class="incident_heading">Drugs</div>
+                                        <div class="incident_heading">DRUGS</div>
                                         <div class="incident_drug_items" 
                                           ng-repeat='drug in incident.patient.drug'>
                                             <div class="incident_drug_item">{{drug.medicinalproduct}} <span class="characterization">({{getDrugCharacter(drug.drugcharacterization)}})</span></div>
                                         </div>
                                       </div>
                                       <div class="incident_reactions">
-                                        <div class="incident_heading">Patient reactions</div>
+                                        <div class="incident_heading">PATIENT REACTIONS</div>
                                         <div class="incident_reaction_items" 
                                           ng-repeat='reaction in incident.patient.reaction'>
                                             <div class="incident_reaction_item">{{reaction.reactionmeddrapt}}</div>

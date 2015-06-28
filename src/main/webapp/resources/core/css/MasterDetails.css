@@ -57,10 +57,14 @@ nav a{
     padding: 0;
 }
 
+.search_bar{
+    border-bottom: 1px solid #ddd;
+}
+
 #divMasterDetailWrapper
 {
     height: 80%;
-    height: calc(100% - 230px);
+    height: calc(100% - 250px);
     font-size: 12px;
 }
 #divMasterView
