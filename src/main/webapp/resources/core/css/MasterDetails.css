@@ -61,6 +61,10 @@ nav a{
     border-bottom: 1px solid #ddd;
 }
 
+.search_bar form{
+    margin: 10px;
+}
+
 #divMasterDetailWrapper
 {
     height: 80%;
