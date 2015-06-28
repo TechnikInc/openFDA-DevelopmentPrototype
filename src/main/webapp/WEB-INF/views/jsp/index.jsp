@@ -50,8 +50,7 @@
                                 		ng-repeat="incident in listOfIncidents" 
                                 		class="cssOneOrderRecord">
                                     <div class="cssOneOrderHeader">
-                                        <div class="cssOrderID">Safety Report # {{incident.safetyreportid}}</div>
-                                        <div class="cssOrderDate">Incident Receipt Date: {{incident.receiptdate}}</div>
+                                        <div class="cssOrderID">Safety Report # {{incident.safetyreportid}} <span class="received">(Received {{incident.receiptdate}})</span></div>
                                     </div>
                                     <div class="cssOneProductRecord" 
                                     	ng-repeat='reaction in incident.patient.reaction' 
