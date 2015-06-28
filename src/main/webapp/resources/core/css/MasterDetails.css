@@ -229,4 +229,20 @@ nav a{
     background-color: #F0F8F8;
 }
 
+.incident_table{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
 
+.incident_table > div{
+    display: table-cell;
+    vertical-align: top;
+    padding: 10px;
+}
+
+.incident_drug_item, .incident_reaction_item{
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 6px 0;
+}

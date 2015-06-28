@@ -52,21 +52,19 @@
                                     <div class="cssOneOrderHeader">
                                         <div class="cssOrderID">Safety Report # {{incident.safetyreportid}} <span class="received">(Received {{incident.receiptdate}})</span></div>
                                     </div>
-                                    <div class="cssOneProductRecord" 
-                                    	ng-repeat='reaction in incident.patient.reaction' 
-                                    	ng-class-odd="'cssProductOdd'" 
-                                    	ng-class-even="'cssProductEven'">
-                                        <div class="cssOneProductQty">{{reaction.reactionmeddrapt}}</div>
-                                        <div class="cssOneProductName">{{reaction.reactionmeddraversionpt}}</div>
-                                        <div class="cssOneProductPrice">{{reaction.reactionoutcome}}</div>
-                                    </div>   
-                                    <div class="cssOneProductRecord" 
-                                    	ng-repeat='drug in incident.patient.drug' 
-                                    	ng-class-odd="'cssProductOdd'" 
-                                    	ng-class-even="'cssProductEven'">
-                                        <div class="cssOneProductQty">{{drug.medicinalproduct}}</div>
-                                        <div class="cssOneProductName">{{drug.drugindication}}</div>
-                                        <div class="cssOneProductPrice">{{drug.drugdosageform}}</div>
+                                    <div class="incident_table">
+                                      <div class="incident_drugs">
+                                        <div class="incident_drug_items" 
+                                          ng-repeat='drug in incident.patient.drug'>
+                                            <div class="incident_drug_item">{{drug.medicinalproduct}}</div>
+                                        </div>
+                                      </div>
+                                      <div class="incident_reactions">
+                                        <div class="incident_reaction_items" 
+                                          ng-repeat='reaction in incident.patient.reaction'>
+                                            <div class="incident_reaction_item">{{reaction.reactionmeddrapt}}</div>
+                                        </div>
+                                      </div>
                                     </div>
                                 </div>
                             </div>
