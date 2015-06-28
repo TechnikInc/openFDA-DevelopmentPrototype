@@ -162,7 +162,6 @@ nav a{
     background-color: #E0E0E0;
     width: 100%;
     position: relative;
-    margin: 0px 0px 4px 0px;
 }
 .cssOrderID
 {
@@ -193,14 +192,14 @@ nav a{
 .cssOneProductName
 {
     position:absolute;
-    left: 100px;
+    left: 260px;
     top: 5px;
 }
 .cssOneProductPrice
 {
     position:absolute;
-    left: 300px;
-    top: 7px;
+    left: 570px;
+    top: 5px;
 }
 .cssOneProductSubtotal {
     position:absolute;
