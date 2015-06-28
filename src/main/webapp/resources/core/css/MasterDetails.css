@@ -241,6 +241,13 @@ nav a{
     padding: 10px;
 }
 
+.incident_heading{
+    font-size: 15px;
+    font-weight: bold;
+    color: #222;
+    margin: 0 0 8px 0;
+}
+
 .incident_drug_item, .incident_reaction_item{
     font-size: 14px;
     color: #333;

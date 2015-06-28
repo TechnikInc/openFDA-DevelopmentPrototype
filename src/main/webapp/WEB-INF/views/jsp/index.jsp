@@ -54,12 +54,14 @@
                                     </div>
                                     <div class="incident_table">
                                       <div class="incident_drugs">
+                                        <div class="incident_heading">Drugs</div>
                                         <div class="incident_drug_items" 
                                           ng-repeat='drug in incident.patient.drug'>
-                                            <div class="incident_drug_item">{{drug.medicinalproduct}}</div>
+                                            <div class="incident_drug_item">{{drug.medicinalproduct}} ({{drug.drugcharacterization}})</div>
                                         </div>
                                       </div>
                                       <div class="incident_reactions">
+                                        <div class="incident_heading">Patient reactions</div>
                                         <div class="incident_reaction_items" 
                                           ng-repeat='reaction in incident.patient.reaction'>
                                             <div class="incident_reaction_item">{{reaction.reactionmeddrapt}}</div>
