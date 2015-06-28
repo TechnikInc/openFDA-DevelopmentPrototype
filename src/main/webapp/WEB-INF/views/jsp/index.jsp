@@ -57,7 +57,7 @@
                                         <div class="incident_heading">Drugs</div>
                                         <div class="incident_drug_items" 
                                           ng-repeat='drug in incident.patient.drug'>
-                                            <div class="incident_drug_item">{{drug.medicinalproduct}} ({{getDrugCharacter(drug.drugcharacterization)}})</div>
+                                            <div class="incident_drug_item">{{drug.medicinalproduct}} <span class="characterization">({{getDrugCharacter(drug.drugcharacterization)}})</span></div>
                                         </div>
                                       </div>
                                       <div class="incident_reactions">

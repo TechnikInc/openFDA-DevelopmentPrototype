@@ -253,3 +253,13 @@ nav a{
     color: #333;
     margin: 0 0 6px 0;
 }
+
+.incident_drug_item{
+    font-weight: bold;
+}
+
+.incident_drug_item .characterization{
+    font-weight: normal;
+    font-style: italic;
+    color: #555;
+}
