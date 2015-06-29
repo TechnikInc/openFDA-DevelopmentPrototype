@@ -13,7 +13,7 @@ deploy:
   local_dir: build/distributions
   skip_cleanup: true
   on: &2
-    repo: krishnachaganti/technikfda
+    repo: TechnikInc/openFDA-DevelopmentPrototype
   bucket: technikfda.bucket.s3
   upload_dir: latest
 - provider: codedeploy
