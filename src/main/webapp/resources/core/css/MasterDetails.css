@@ -111,6 +111,11 @@ and (max-device-width : 736px){
     .cssOneOrderRecord{
         margin: 15px 5px;
     }
+
+    .cssOneCompanyRecord:hover
+    {
+        background-color: transparent;
+    }
 } 
 
 /*
