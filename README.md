@@ -25,7 +25,7 @@ c.The following modern and open-source technologies are applied to this effort
 **Data Sources** 
  - Drug Adverse Event data from [openFDA    API](https://open.fda.gov/api/reference/)
  - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country codes to country names
- -  - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country
+ - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country
 
 **Programming languages**
  - [Java](https://en.wikipedia.org/wiki/Java_programming_language)
