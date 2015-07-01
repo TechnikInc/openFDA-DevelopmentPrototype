@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/krishnachaganti/travis_test.svg?branch=master)](https://travis-ci.org/krishnachaganti/technikfda)
 
-# OpenFDA Adverse Drug Event Reports by Country - [Technik, Inc.](http://www.technikinc.com)
+# OpenFDA Adverse Drug Event Reports by Country - [Technik, Inc.](http://www.technikinc.com) 
 
 [Click here to view the prototype](http://ec2-54-175-24-134.compute-1.amazonaws.com:8080/technikfda/)
 
@@ -28,9 +28,9 @@ c.The following modern and open-source technologies are applied to this effort
  - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country (artifact - constants.java)
 
 **Programming languages**
- - [Java](https://en.wikipedia.org/wiki/Java_programming_language)
- - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
- - [HTML](https://en.wikipedia.org/wiki/HTML)
+ - [Java](https://en.wikipedia.org/wiki/Java_programming_language) (artifact - RestUtil.java )
+ - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) (artifact - MasterDetailsCtrl.js)
+ - [HTML](https://en.wikipedia.org/wiki/HTML) (artifact - index.jsp)
 
 **Frameworks (Serverside)**
  - [Spring Web model-view-controller (MVC)](https://spring.io/guides/gs/serving-web-content/) Framework (artifact - spring-core-config.xml)
@@ -73,12 +73,12 @@ j. Feedback from user tests led to subsequent work and an updated prototype. (Ex
 k. Steps to install and run prototype on another machine
 **Local machine installation**
 •	Install [Apache Tomcat 6.0]( https://tomcat.apache.org/tomcat-6.0-doc/deployer-howto.html) open-source web server on local machine
-•	Manually deploy Web application Archive (WAR) file in Tomcat (see attached openfda-developmentprototype.war file in GitHub repository)
+•	Manually deploy Web application Archive (WAR) file in Tomcat (use openfda-developmentprototype.war file in GitHub repository)
 •	Restart Tomcat server
 
 **Setup Continuous Integration (CI) using [Travis CI](https://www.travis-ci.org/) :**
 The major CI steps include
-•	Clone  or download TechnikInc/openFDA-DevelopmentPrototype  GitHub repository  to create a new repository
+•	Clone  or download [TechnikInc/openFDA-DevelopmentPrototype](https://github.com/TechnikInc/openFDA-DevelopmentPrototype)  GitHub repository  to create a new repository
 •	From Travis CI activate the new GitHub Repository
 •	Trigger the first build to Travis with a Git push
  
@@ -87,7 +87,7 @@ The major steps include
 •	Create and provision applicable instances in AWS
 •	Deploy application from GitHub to the applicable instances using AWS CodeDeploy
 •	Edit .travis.yml file to point to the correct AWS instances and access keys 
-•	Track and monitor the status of your deployments through AWS real-time monitoring tools.
+•	Track and monitor the status of your deployments through [Amazon CloudWatch](http://aws.amazon.com/cloudwatch/) real-time monitoring tools.
 
 l. The prototype and underlying platforms are openly licensed and free of charge using the MIT free software license.
 
