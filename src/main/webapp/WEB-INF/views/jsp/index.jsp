@@ -66,7 +66,7 @@
                                			ng-class="{cssCompanySelectedRecord: country.term == selectedCountry}" 
                                			ng-repeat="country in countries" 
                                			ng-click="selectCountry(country);">
-                                    <div class="cssCompanyName">{{country.countryName}} ({{country.count}})</div>
+                                    <div class="cssCompanyName">{{country.countryName}}</div>
                                      <img src="{{country.imageSrc}}"
                                        title="{{country.countryName}}"
                                        class="cssCustomerIcon" />
