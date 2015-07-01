@@ -66,7 +66,7 @@ g. Used [Git](https://git-scm.com/) open source distributed version control syst
 
 h. Used [Amazon CloudWatch](http://aws.amazon.com/cloudwatch/) for monitoring AWS cloud resources and the applications on AWS. See "Evidence" folder in GitHub Repository for artifacts. ( artifact - Technik_18F_Amazon_Cloud_Watch.jpeg)
  
-i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.  **need image or file name**
+i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.  See "Evidence" folder in GitHub Repository for artifacts. ( artifact - Technik_18F_Docker.jpeg)
  
 j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform.
 
