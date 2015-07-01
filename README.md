@@ -37,7 +37,7 @@ b. The Technik openFDA development team consisted of three resources assigned to
  - [jQuery](https://jquery.com/) JavaScript library
 
 **Testing tools**
- - JUnit](http://junit.org/) as the framework to write repeatable tests
+ - [JUnit](http://junit.org/) as the framework to write repeatable tests
  - [Mockito](http://mockito.org/) mocking framework for creating JUnit tests 
 
 **Build Tools**
