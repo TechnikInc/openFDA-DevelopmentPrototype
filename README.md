@@ -28,7 +28,7 @@ c.The following modern and open-source technologies are applied to this effort
  - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country (artifact - constants.java)
 
 **Programming languages**
- - [Java](https://en.wikipedia.org/wiki/Java_programming_language)
+ - [Java](https://en.wikipedia.org/wiki/Java_programming_language) (artifact - RestUtil.java )
  - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
  - [HTML](https://en.wikipedia.org/wiki/HTML)
 
