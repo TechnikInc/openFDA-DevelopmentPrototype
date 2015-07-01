@@ -4,7 +4,7 @@
 
 [Click here to view the prototype](http://ec2-54-175-24-134.compute-1.amazonaws.com:8080/technikfda/)
 
-This prototype allows consumers to view adverse drug event reports by country via a simple and intuitive user interface. The [openFDA drug adverse event API](https://api.fda.gov/drug/event) was consumed [Restfully](https://en.wikipedia.org/wiki/Representational_state_transfer) to return data from the [FDA Adverse Event Reporting System (FAERS)](https://open.fda.gov/data/faers/) 
+This prototype allows consumers to view adverse drug event reports by country via a simple and intuitive graphical user interface. The [openFDA drug adverse event API](https://api.fda.gov/drug/event) was consumed [Restfully](https://en.wikipedia.org/wiki/Representational_state_transfer) to return data from the [FDA Adverse Event Reporting System (FAERS)](https://open.fda.gov/data/faers/) 
 
 
 ## Approach used to create Pool Two Development prototype
@@ -23,9 +23,9 @@ b. The Technik openFDA development team consisted of three resources assigned to
 c.The following modern and open-source technologies are applied to this effort
 
 **Data Sources** 
- - Drug Adverse Event data from [openFDA    API] (https://open.fda.gov/api/reference/) constants.java
- - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country codes to country names CountryNameCodeRefresher.java
- - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country constants.java
+ - Drug Adverse Event data from [openFDA    API] (https://open.fda.gov/api/reference/)  ( artifact - constants.java)
+ - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country codes to country names (artifact - CountryNameCodeRefresher.java)
+ - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country (artifact - constants.java)
 
 **Programming languages**
  - [Java](https://en.wikipedia.org/wiki/Java_programming_language)
@@ -33,46 +33,47 @@ c.The following modern and open-source technologies are applied to this effort
  - [HTML](https://en.wikipedia.org/wiki/HTML)
 
 **Frameworks (Serverside)**
- - [Spring Web model-view-controller (MVC)](https://spring.io/guides/gs/serving-web-content/) Framework spring-core-config.xml
- - [Jackson-databinding](https://github.com/FasterXML/jackson-databind/) package  spring-mvc-config.xml
+ - [Spring Web model-view-controller (MVC)](https://spring.io/guides/gs/serving-web-content/) Framework (artifact - spring-core-config.xml)
+ - [Jackson-databinding](https://github.com/FasterXML/jackson-databind/) package  ( artifact - spring-mvc-config.xml)
 
 **Frameworks (Clientside)**
- - HTML Vocabulary Extension using [AngularJS](https://angularjs.org/)
- - [jQuery](https://jquery.com/) JavaScript library
+ - HTML Vocabulary Extension using [AngularJS](https://angularjs.org/) (artifact - index.jsp)
+ - [jQuery](https://jquery.com/) JavaScript library (artifact - index.jsp)
+ - [Bootstrap](http://getbootstrap.com) for basic web components (artifact - index.jsp)
 
 **Testing tools**
- - [JUnit](http://junit.org/) as the framework to write repeatable tests
- - [Mockito](http://mockito.org/) mocking framework for creating JUnit tests 
+ - [JUnit](http://junit.org/) as the framework to write repeatable tests  ( artifact -  WelcomeControllerTest.java)
+ - [Mockito](http://mockito.org/) mocking framework for creating JUnit tests (artifact - WelcomeControllerTest.java)
 
 **Build Tools**
- - [Gradle](https://gradle.org/) open-source build automation tool
+ - [Gradle](https://gradle.org/) open-source build automation tool (artifact -  build.gradle)
 
 **Version Tools**
  - Web-based Git repository and source code management (SCM) using [GitHub](https://github.com/)
  - [Git Shell](http://git-scm.com/docs/git-shell) Login shell for Git-only SSH access
 
 **Editor**
- - [Stackedit](https://stackedit.io/) Mark down editor
+ - [Stackedit](https://stackedit.io/) Mark down editor ( artifact README.md)
 
 
-d. The prototype is deployed on [Amazon Web Services (AWS)](https://aws.amazon.com/?nc2=h_lg) Platform as a Service (PaaS).
+d. The prototype is deployed on [Amazon Web Services (AWS)](https://aws.amazon.com/?nc2=h_lg) Platform as a Service (PaaS).  See "Evidence" folder in GitHub Repository for artifacts. ( artifact - Technik_18F_Web_Services.jpeg)
 
-e.  Unit tests are implemented using Mockito with Junit
+e.  Unit tests are implemented using Mockito with Junit (artifact - WelcomeControllerTest.java)
 
-f. [Travis Continous Integration System](https://travis-ci.org) is used to automate the running of tests and continuously deploy code to Amazon Web Services using [AWS CodeDeploy](http://aws.amazon.com/codedeploy/)
+f. [Travis Continous Integration System](https://travis-ci.org) is used to automate the running of tests and continuously deploy code to Amazon Web Services using [AWS CodeDeploy](http://aws.amazon.com/codedeploy/) (  artifact  -  .travis.yml)
 
 g. Used [Git](https://git-scm.com/) open source distributed version control system on [GitHub](https://github.com/) for configuration management
 
-h. Used [Amazon CloudWatch](http://aws.amazon.com/cloudwatch/) for monitoring AWS cloud resources and the applications on AWS. 
+h. Used [Amazon CloudWatch](http://aws.amazon.com/cloudwatch/) for monitoring AWS cloud resources and the applications on AWS. See "Evidence" folder in GitHub Repository for artifacts. ( artifact - Technik_18F_Amazon_Cloud_Watch.jpeg)
  
-i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.
+i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.  See "Evidence" folder in GitHub Repository for artifacts. ( artifact - Technik_18F_Docker.jpeg)
  
-j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform.
+j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform. (artifact - sprint 0, sprint 1, sprint 2)
 
 k. Steps to install and run prototype on another machine
 **Local machine installation**
 •	Install [Apache Tomcat 6.0]( https://tomcat.apache.org/tomcat-6.0-doc/deployer-howto.html) open-source web server on local machine
-•	Manually deploy Web application Archive (WAR) file in Tomcat (see attached XXX.war file in GitHub repository)
+•	Manually deploy Web application Archive (WAR) file in Tomcat (see attached openfda-developmentprototype.war file in GitHub repository)
 •	Restart Tomcat server
 
 **Setup Continuous Integration (CI) using [Travis CI](https://www.travis-ci.org/) :**
@@ -89,6 +90,5 @@ The major steps include
 •	Track and monitor the status of your deployments through AWS real-time monitoring tools.
 
 l. The prototype and underlying platforms are openly licensed and free of charge using the MIT free software license.
-
 
 ----------
