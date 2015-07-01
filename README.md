@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/krishnachaganti/travis_test.svg?branch=master)](https://travis-ci.org/krishnachaganti/technikfda)
 
-# OpenFDA Adverse Drug Event Reports by Country - [Technik, Inc.](http://www.technikinc.com) 
+# OpenFDA Adverse Drug Event Reports by Country - [Technik, Inc.](http://www.technikinc.com)
 
 [Click here to view the prototype](http://ec2-54-175-24-134.compute-1.amazonaws.com:8080/technikfda/)
 
@@ -26,7 +26,7 @@ b. The Technik openFDA development team consisted of three resources assigned to
 
 **Programming languages**
  - [Java](https://en.wikipedia.org/wiki/Java_programming_language)
- - [Javascript](https://en.wikipedia.org/wiki/JavaScript) 
+ - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
  - [HTML](https://en.wikipedia.org/wiki/HTML)
 
 **Frameworks (Serverside)**
