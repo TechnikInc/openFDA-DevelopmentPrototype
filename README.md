@@ -41,27 +41,26 @@ b. The Technik openFDA development team consisted of three resources assigned to
  - [Mockito](http://mockito.org/) mocking framework for creating JUnit tests 
 
 **Build Tools**
- - Gradle
+ - [Gradle](https://gradle.org/) open-source build automation tool
 
 **Version Tools**
  - Web-based Git repository and source code management (SCM) using [GitHub](https://github.com/)
  - [Git Shell](http://git-scm.com/docs/git-shell) - Login shell for Git-only SSH access
 
 
-d. The prototype is deployed on Amazon Web Services (AWS) Platform as a Service (PaaS).
+d. The prototype is deployed on [Amazon Web Services (AWS)](https://aws.amazon.com/?nc2=h_lg) Platform as a Service (PaaS).
+
 
 
 e.  Unit tests are implemented using Mockito with Junit
 
+f. [Travis Continous Integration System](https://travis-ci.org) is used to automate the running of tests and continuously deploy code to Amazon Web Services using [AWS CodeDeploy](http://aws.amazon.com/codedeploy/)
 
-f. Travis Continous Integration System is used to automate the running of tests and continuously deploy code to Amazon Web Services using AWS CodeDeploy.
-
-
-g. Used Git on GitHub for configuration management
+g. Used [Git](https://git-scm.com/) open source distributed version control system on [GitHub](https://github.com/) for configuration management
 
 h. Used AWS contiunous monitoring dashboard
  
-i. Used Docker container to deploy the application and all of its dependencies.
+i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.
  
 j. Used an iterative approach, where feedback informed subsequent work or versions of the prototype
 
