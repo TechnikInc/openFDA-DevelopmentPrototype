@@ -13,16 +13,19 @@ This prototype allows consumers to view adverse drug event reports by country vi
 
 a. Mr. Satish Venkatesan was the assigned leader (Product Manager) with authority, responsibility and accountability for the quality of the prototype submitted.
 
-b. The Technik openFDA development team consisted of three resources assigned to the following Design Pool Labor categories from the Developement Pool Labor categories from 18F Agile Labor Categories. Attachment C is updated accordingly
+b. The Technik openFDA development team consisted of three resources assigned to the following Design Pool Labor categories from the Development Pool Labor categories from 18F Agile Labor Categories. Attachment C is updated accordingly
 
  - Technical Architect - Manage the technical implementation of the prototype
  - Dev Ops  Engineer - Configure continuous integration, continuous deployment and configured operating system level virtualization
- - Front  End Web Developer - Developed the prototype using modern techniques and frameworks. The following modern and open-source technologies are applied to this effort
+ - Front  End Web Developer - Developed the prototype using modern techniques and frameworks. 
+ -  Backend Web Developer - Used modern open source web programming languages to develop and consume web-based RESTful APIs.
+
+c.The following modern and open-source technologies are applied to this effort
 
 **Data Sources** 
- - Drug Adverse Event data from [openFDA    API](https://open.fda.gov/api/reference/)
- - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country code to    country name
- - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country
+ - Drug Adverse Event data from [openFDA    API] (https://open.fda.gov/api/reference/) constants.java
+ - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country codes to country names CountryNameCodeRefresher.java
+ - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country constants.java
 
 **Programming languages**
  - [Java](https://en.wikipedia.org/wiki/Java_programming_language)
@@ -30,8 +33,8 @@ b. The Technik openFDA development team consisted of three resources assigned to
  - [HTML](https://en.wikipedia.org/wiki/HTML)
 
 **Frameworks (Serverside)**
- - [Spring Web model-view-controller (MVC)](https://spring.io/guides/gs/serving-web-content/) Framework
- - [Jackson-databinding](https://github.com/FasterXML/jackson-databind/) package 
+ - [Spring Web model-view-controller (MVC)](https://spring.io/guides/gs/serving-web-content/) Framework spring-core-config.xml
+ - [Jackson-databinding](https://github.com/FasterXML/jackson-databind/) package  spring-mvc-config.xml
 
 **Frameworks (Clientside)**
  - HTML Vocabulary Extension using [AngularJS](https://angularjs.org/)
@@ -46,7 +49,7 @@ b. The Technik openFDA development team consisted of three resources assigned to
 
 **Version Tools**
  - Web-based Git repository and source code management (SCM) using [GitHub](https://github.com/)
- - [Git Shell](http://git-scm.com/docs/git-shell) - Login shell for Git-only SSH access
+ - [Git Shell](http://git-scm.com/docs/git-shell) Login shell for Git-only SSH access
 
 **Editor**
  - [Stackedit](https://stackedit.io/) Mark down editor
@@ -60,13 +63,30 @@ f. [Travis Continous Integration System](https://travis-ci.org) is used to autom
 
 g. Used [Git](https://git-scm.com/) open source distributed version control system on [GitHub](https://github.com/) for configuration management
 
-h. Used AWS contiunous monitoring dashboard
+h. Used [Amazon CloudWatch](http://aws.amazon.com/cloudwatch/) for monitoring AWS cloud resources and the applications on AWS. 
  
 i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.
  
-j. Used an iterative approach, where feedback informed subsequent work or versions of the prototype
+j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform.
 
-k. Write documentation on how to install an run prototype
+k. Steps to install and run prototype on another machine
+**Local machine installation**
+•	Install [Apache Tomcat 6.0]( https://tomcat.apache.org/tomcat-6.0-doc/deployer-howto.html) open-source web server on local machine
+•	Manually deploy Web application Archive (WAR) file in Tomcat (see attached XXX.war file in GitHub repository)
+•	Restart Tomcat server
+
+**Setup Continuous Integration (CI) using [Travis CI](https://www.travis-ci.org/) :**
+The major CI steps include
+•	Clone  or download TechnikInc/openFDA-DevelopmentPrototype  GitHub repository  to create a new repository
+•	From Travis CI activate the new GitHub Repository
+•	Trigger the first build to Travis with a Git push
+ 
+**Setup Continuous Deployment to [Amazon Web Services (AWS)](http://aws.amazon.com/codedeploy/) using AWS CodeDeploy:**
+The major steps include
+•	Create and provision applicable instances in AWS
+•	Deploy application from GitHub to the applicable instances using AWS CodeDeploy
+•	Edit .travis.yml file to point to the correct AWS instances and access keys 
+•	Track and monitor the status of your deployments through AWS real-time monitoring tools.
 
 l. The prototype and underlying platforms are openly licensed and free of charge using the MIT free software license.
 
