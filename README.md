@@ -13,11 +13,14 @@ This prototype allows consumers to view adverse drug event reports by country vi
 
 a. Mr. Satish Venkatesan was the assigned leader (Product Manager) with authority, responsibility and accountability for the quality of the prototype submitted.
 
-b. The Technik openFDA development team consisted of three resources assigned to the following Design Pool Labor categories from the Developement Pool Labor categories from 18F Agile Labor Categories. Attachment C is updated accordingly
+b. The Technik openFDA development team consisted of three resources assigned to the following Design Pool Labor categories from the Development Pool Labor categories from 18F Agile Labor Categories. Attachment C is updated accordingly
 
  - Technical Architect - Manage the technical implementation of the prototype
  - Dev Ops  Engineer - Configure continuous integration, continuous deployment and configured operating system level virtualization
- - Front  End Web Developer - Developed the prototype using modern techniques and frameworks. The following modern and open-source technologies are applied to this effort
+ - Front  End Web Developer - Developed the prototype using modern techniques and frameworks. 
+ -  Backend Web Developer - Used modern open source web programming languages to develop and consume web-based RESTful APIs.
+
+c.The following modern and open-source technologies are applied to this effort
 
 **Data Sources** 
  - Drug Adverse Event data from [openFDA    API](https://open.fda.gov/api/reference/)
