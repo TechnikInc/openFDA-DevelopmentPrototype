@@ -24,14 +24,14 @@ c. The following modern and open-source technologies are applied to this effort
 **Data** 
  - Drug Adverse Event data from [openFDA    API](https://open.fda.gov/api/reference/)
  - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country code to    country name
-- GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country
+ - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country
 
-Programming languages
- - Java
- - Javascript
- - HTML 
+**Programming languages**
+ - [Java](https://en.wikipedia.org/wiki/Java_programming_language)
+ - [Javascript](https://en.wikipedia.org/wiki/JavaScript) 
+ - [HTML](https://en.wikipedia.org/wiki/HTML)
 
-Frameworks (Serverside)
+**Frameworks (Serverside)**
  - Spring
  - Jackson-databind 
 
