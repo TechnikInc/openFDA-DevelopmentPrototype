@@ -73,7 +73,7 @@ j. Feedback from user tests led to subsequent work and an updated prototype. (Ex
 k. Steps to install and run prototype on another machine
 **Local machine installation**
 •	Install [Apache Tomcat 6.0]( https://tomcat.apache.org/tomcat-6.0-doc/deployer-howto.html) open-source web server on local machine
-•	Manually deploy Web application Archive (WAR) file in Tomcat (use openfda-developmentprototype.war file in GitHub repository)
+•	Manually deploy Web application Archive (WAR) file in Tomcat (use technikfda.war file in GitHub repository)
 •	Restart Tomcat server
 
 **Setup Continuous Integration (CI) using [Travis CI](https://www.travis-ci.org/) :**
