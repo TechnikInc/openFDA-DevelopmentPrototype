@@ -32,22 +32,23 @@ c. The following modern and open-source technologies are applied to this effort
  - [HTML](https://en.wikipedia.org/wiki/HTML)
 
 **Frameworks (Serverside)**
- - Spring
- - Jackson-databind 
+ - [Spring Web model-view-controller (MVC)](https://spring.io/guides/gs/serving-web-content/) Framework
+ - [Jackson-databinding](https://github.com/FasterXML/jackson-databind/) package 
 
-Frameworks (Clientside)
- - Angular JS
- - jQuery
-Testing tools
- - jUnit
- - Mokito
+**Frameworks (Clientside)**
+ - HTML Vocabulary Extension using [AngularJS](https://angularjs.org/)
+ - [jQuery](https://jquery.com/) JavaScript library
 
-Build Tools
+**Testing tools**
+ - JUnit](http://junit.org/) as the framework to write repeatable tests
+ - [Mockito](http://mockito.org/) mocking framework for creating JUnit tests 
+
+**Build Tools**
  - Gradle
 
-Version Tools
- - GitHub, 
- - Git shell
+**Version Tools**
+ - Web-based Git repository and source code management (SCM) using [GitHub](https://github.com/)
+ - [Git Shell](http://git-scm.com/docs/git-shell) - Login shell for Git-only SSH access
 
 
 
