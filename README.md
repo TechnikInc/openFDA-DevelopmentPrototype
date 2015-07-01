@@ -21,8 +21,8 @@ b. The Technik openFDA development team consisted of three resources assigned to
 
 **Data Sources** 
  - Drug Adverse Event data from [openFDA    API](https://open.fda.gov/api/reference/)
- - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country code to    country name
- - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country
+ - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country codes to country names
+ -  - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country
 
 **Programming languages**
  - [Java](https://en.wikipedia.org/wiki/Java_programming_language)
@@ -64,9 +64,26 @@ h. Used AWS contiunous monitoring dashboard
  
 i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.
  
-j. Used an iterative approach, where feedback informed subsequent work or versions of the prototype
+j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). – The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform.
 
-k. Write documentation on how to install an run prototype
+k. Steps to install and run prototype on another machine
+**Local machine installation**
+•	Install [Apache Tomcat 6.0]( https://tomcat.apache.org/tomcat-6.0-doc/deployer-howto.html) open-source web server on local machine
+•	Manually deploy Web application Archive (WAR) file in Tomcat (see attached XXX.war file in GitHub repository)
+•	Restart Tomcat server
+
+**Setup Continuous Integration (CI) using [Travis CI](https://www.travis-ci.org/) :**
+The major CI steps include
+•	Clone  or download TechnikInc/openFDA-DevelopmentPrototype  GitHub repository  to create a new repository
+•	From Travis CI activate the new GitHub Repository
+•	Trigger the first build to Travis with a Git push
+ 
+**Setup Continuous Deployment to [Amazon Web Services (AWS)](http://aws.amazon.com/codedeploy/) using AWS CodeDeploy:**
+The major steps include
+•	Create and provision applicable instances in AWS
+•	Deploy application from GitHub to the applicable instances using AWS CodeDeploy
+•	Edit .travis.yml file to point to the correct AWS instances and access keys 
+•	Track and monitor the status of your deployments through AWS real-time monitoring tools.
 
 l. The prototype and underlying platforms are openly licensed and free of charge using the MIT free software license.
 
