@@ -45,6 +45,7 @@
                     <div class="panel-body">
                         <div class="search_bar">
                             <form class="form-inline">
+                              
                               <div class="form-group">
                                 <label class="sr-only" for="search_brand">Drug Name</label>
                                 <input ng-model="searchDrugField" type="text" 
@@ -52,7 +53,10 @@
                                 	id="search_drug" 
                                 	placeholder="Drug name (e.g. aspirin)" 
                                 	value="Aspirin" 
-                                	autocomplete="off">
+                                	autocomplete="off"> 
+                              </div>
+                              <div class="form-group">
+                                Input medicinal product to view related adverse event summaries.
                               </div>
                               <!--button type="submit" class="btn btn-default">Search</button-->
                             </form>
