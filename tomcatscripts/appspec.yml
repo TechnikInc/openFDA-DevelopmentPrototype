@@ -5,6 +5,7 @@ os: linux
 # We need to copy our artifacts over to the tomcat applications directory, which is /usr/share/tomcat<Version>/webapps
 # This can be replaced with an environment variable reference defined in the 
 # AWS instance - for example 
+# for this application technikfda.war is the only file we need to deploy
 files:
   - source: technikfda.war
     destination: /usr/share/tomcat7/webapps
