@@ -4,9 +4,9 @@
 
 [Click here to view the prototype](http://ec2-54-175-24-134.compute-1.amazonaws.com:8080/technikfda/)
 
-This tool allows consumers to search for OTC and prescription drug facts via a simple and intuitive user interface. In addition to detailed drug information provided by OpenFDA APIs, product images from Microsoft's Bing search API are used to facilitate rapid recognition.
+This prototype allows consumers to view adverse drug event reports vy country via a simple and intuitive user interface. The [openFDA drug adverse event API](https://api.fda.gov/drug/event) was consumed RESTfully used to return data from the [FDA Adverse Event Reporting System (FAERS)](https://open.fda.gov/data/faers/) 
 
-## Approach used to create Pool One Design prototype
+## Approach used to create Pool Two Development prototype
 
 ***We followed the U.S. Digital Services Playbook requirements***
 
