@@ -65,6 +65,10 @@ nav a{
     margin: 10px;
 }
 
+.form-line .form-control{
+    width: 210px;
+}
+
 #divMasterDetailWrapper
 {
     height: 80%;
@@ -79,12 +83,26 @@ nav a{
     margin-right: 5px;
     overflow-y: auto;
     float: left;
+    border-right: 1px solid #ddd;
 }
 #divDetailView
 {
     height: 100%;
     padding: 0;
     overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#divDetailView h3{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 12px 8px 16px;
+}
+
+.disclaimer{
+    margin: 12px 8px;
+    font-size: 11px;
+    color: #777;
 }
 
 /* Responsive media queries */
@@ -95,12 +113,17 @@ and (max-device-width : 736px){
         height: auto;
     }
 
+    .main{
+        padding: 8px 0;
+    }
+
     #divMasterView{
       width: 100%;
       height: 170px;
       margin-right: 0;
       overflow-y: auto;
       float: none;
+      border-right: none;
       border-bottom: 7px solid #ddd;
     }
 
@@ -116,7 +139,17 @@ and (max-device-width : 736px){
     {
         background-color: transparent;
     }
-} 
+
+    .form-inline .form-group {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+
+    .form-control{
+        width: auto;
+    }
+}
 
 /*
     *   This is the CSS for one Customer record, in our Master view
@@ -135,7 +168,7 @@ and (max-device-width : 736px){
 }
 .cssOneCompanyRecord:hover
 {
-    background-color: #cde6fa;
+    background-color: #2d5bb8;
     cursor: pointer;
 }
 .cssCompanySelectedRecord {
@@ -147,7 +180,7 @@ and (max-device-width : 736px){
     top: 15px;
     left: 40px;
 }
-.cssCompanySelectedRecord .cssCompanyName{
+.cssCompanySelectedRecord .cssCompanyName, .cssOneCompanyRecord:hover .cssCompanyName{
     color: #fff;
 }
 .cssCompanyCity
@@ -158,7 +191,7 @@ and (max-device-width : 736px){
     color: #505050;
     font-size: 0.9em;
 }
-.cssCompanySelectedRecord .cssCompanyCity{
+.cssCompanySelectedRecord .cssCompanyCity, .cssOneCompanyRecord:hover .cssCompanyCity{
     color: #fff;
 }
 .cssCustomerID

@@ -1,7 +1,7 @@
 package gov.fda.web.controller;
 
 import gov.fda.domain.CountryResult;
-import gov.fda.service.QueryServiceImpl;
+import gov.fda.util.Constants;
 
 public class CountryResultTestHelper {
 	
@@ -10,7 +10,7 @@ public class CountryResultTestHelper {
         dto.setTerm(shortName);
         dto.setCount(totalIncidents);
         dto.setCountryName(countryName);
-        dto.setImageSrc(QueryServiceImpl.COUNTRY_FLAG_URL+shortName+QueryServiceImpl.FLAG_FILE_EXTENSION);
+        dto.setImageSrc(Constants.COUNTRY_FLAG_URL+shortName+Constants.FLAG_FILE_EXTENSION);
         return dto;
     }
 

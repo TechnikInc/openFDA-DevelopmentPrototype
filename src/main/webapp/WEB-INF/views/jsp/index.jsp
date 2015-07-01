@@ -5,20 +5,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>OpenFDA Adverse Drug Event Viewer by Technik Inc.</title>
-    <spring:url value="/resources/core/css/MasterDetails.css" var="masterDetailCss" />
-  	<spring:url value="/resources/core/js/MasterDetailCtrl.js" var="masterDetailCtrl" />	
+    <spring:url value="/resources/core/css/MasterDetails.css" var="masterDetailCss" />	
   	<spring:url value="/resources/core/images/icnOffice.png" var="icnOfficImage" />
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./resources/core/css/normalize.min.css">
     <link rel="stylesheet" href="./resources/core/css/main.css">
+    <link rel="stylesheet" href="/technikfda/resources/core/js/chart/angular/angular-chart.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link href="${masterDetailCss}" rel="stylesheet" />
     <link rel="shortcut icon" href="./resources/core/images/favicon.png">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--  angular scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-    <script src="${masterDetailCtrl}" type="text/javascript"></script>
+    <!--  chart.js -->
+    <script src="/technikfda/resources/core/js/chart/Chart.js"></script>
+    <!--  angular plugs to chart.js -->
+    <script src="/technikfda/resources/core/js/chart/angular/angular-chart.js"></script>
+    <script src="./resources/core/js/typeahead.js"></script>
+    <script src="./resources/core/js/drugTypeAhead.js"></script>
+    <script src="/technikfda/resources/core/js/MasterDetailCtrl.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function (){
+      initiateTypeAhead();
+    })
+    </script>
   </head>
   <body>
         <div class="header-container">
@@ -35,9 +47,14 @@
                             <form class="form-inline">
                               <div class="form-group">
                                 <label class="sr-only" for="search_brand">Drug Name</label>
-                                <input type="text" class="form-control" id="search_drug" placeholder="Drug name (e.g. aspirin)" value="Aspirin">
+                                <input ng-model="searchDrugField" type="text" 
+                                	class="form-control" 
+                                	id="search_drug" 
+                                	placeholder="Drug name (e.g. aspirin)" 
+                                	value="Aspirin" 
+                                	autocomplete="off">
                               </div>
-                              <button type="submit" class="btn btn-default">Search</button>
+                              <!--button type="submit" class="btn btn-default">Search</button-->
                             </form>
                         </div>
                         <div 	id="divMasterDetailWrapper" 
@@ -56,31 +73,19 @@
                                 </div>
                             </div>
                             <div id="divDetailView">
-                                <div 	id="Patient Reaction_{{incident.receiptdate}}" 
-                                		ng-repeat="incident in listOfIncidents" 
-                                		class="cssOneOrderRecord">
-                                    <div class="cssOneOrderHeader">
-                                        <div class="cssOrderID">Safety Report # {{incident.safetyreportid}} <span class="received">(Received {{incident.receiptdate}})</span></div>
-                                    </div>
-                                    <div class="incident_table">
-                                      <div class="incident_drugs">
-                                        <div class="incident_heading">DRUGS</div>
-                                        <div class="incident_drug_items" 
-                                          ng-repeat='drug in incident.patient.drug'>
-                                            <div class="incident_drug_item">{{drug.medicinalproduct}} <span class="characterization">({{getDrugCharacter(drug.drugcharacterization)}})</span></div>
-                                        </div>
-                                      </div>
-                                      <div class="incident_reactions">
-                                        <div class="incident_heading">PATIENT REACTIONS</div>
-                                        <div class="incident_reaction_items" 
-                                          ng-repeat='reaction in incident.patient.reaction'>
-                                            <div class="incident_reaction_item">{{reaction.reactionmeddrapt}}</div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
+                              <h3>Adverse events involving aspirin in {{selectedCountry.countryName}}</h3>
+                              <section  ng-controller="DoughnutCtrl">
+  	                            <canvas id="doughnut" 
+  	                            		class="chart chart-doughnut" 
+  	                            		data="data"
+  	                            		legend="true"
+  	  						 			labels="seriousIncidentLabels">
+  	  							             </canvas>
+            	  							</section>
+                              <div class="disclaimer">
+                                Disclaimer: Users are cautioned to not draw conclusions about products based solely on adverse event information. There is no certainty that the reported event was actually caused by the product. The report merely indicates that the patient was taking the medication at the time of the adverse event. Reports do not contain enough detail to fully evaluate an event.
+                              </div>
                             </div>
-                               
                         </div>
                     </div>
                 </div>

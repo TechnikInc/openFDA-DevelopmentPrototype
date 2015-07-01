@@ -1,4 +1,4 @@
-﻿var technikFDAApp = angular.module('technikFDAApp', []);
+﻿var technikFDAApp = angular.module('technikFDAApp', ['chart.js']);
 
 //  Force AngularJS to call our JSON Web Service with a 'GET' rather than an 'OPTION'
 //  Taken from: http://better-inter.net/enabling-cors-in-angular-js/
@@ -55,17 +55,20 @@ technikFDAApp.filter('orderTotal', function () {
 });
 
 technikFDAApp.controller('MasterDetailCtrl',
-function ($scope, $http, $location) {
+function ($scope, $rootScope, $http, $location) {
 
-	$scope.currentServer = $location.protocol()+"://"+$location.host()+":"+$location.port();
+	$scope.searchDrugField = 'Aspirin';
+	console.debug($scope.searchDrugField);
     //  We'll load our list of Countries from our JSON Web Service into this variable
     $scope.listOfCountrys = null;
+    
+    $rootScope.selectedCountry = null;
     
 
     //  When the user selects a "Country" from our MasterView list, we'll set the following variable.
     $scope.selectedCountry = null;
 
-    $http.get('/technikfda/query/countries')
+    $http.get('/technikfda/query/countries/aspirin')
 
         .success(function (data) {
             $scope.countries = data;
@@ -75,10 +78,12 @@ function ($scope, $http, $location) {
                 //  If we managed to load more than one Country record, then select the first record by default.
                 //  This line of code also prevents AngularJS from adding a "blank" <option> record in our drop down list
                 //  (to cater for the blank value it'd find in the "selectedCountry" variable)
-                $scope.selectedCountry = $scope.countries[0].term;
+                $scope.selectedCountry = $scope.countries[0];
+                $rootScope.selectedCountry = $scope.countries[0];
 
                 //  Load the list of Orders, and their Products, that this Country has ever made.
-                $scope.loadIncidents();
+                //$scope.loadIncidents();
+                 $rootScope.loadGraphDataForSelectedCountry($scope.selectedCountry.term);
             }
         })
         .error(function (data, status, headers, config) {
@@ -86,10 +91,28 @@ function ($scope, $http, $location) {
         });
 
     $scope.selectCountry = function (val) {
-        //  If the user clicks on a <div>, we can get the ng-click to call this function, to set a new selected Country.
+        //  If the user clicks on a <div>, we can get the ng-click to call this function, 
+    	//   to set a new selected Country.
         $scope.selectedCountry = val.term;
-        $scope.loadIncidents();
-        $scope.changeDrugCharacterInfo();
+        console.debug("Selected Country :"+$scope.selectedCountry);
+        //$scope.loadGraphics($scope.selectedCountry);
+        $rootScope.loadGraphDataForSelectedCountry($scope.selectedCountry);
+    }
+    
+    $scope.loadGraphics = function (val) {
+        //  Reset our list of Incidents  (when binded, this'll ensure the previous list of incidents disappears from the screen while we're loading our JSON data)
+        $scope.countryCharacters = null;
+        
+        var currentQuery = '/technikfda/query/seriousIncidents/'+val+'/aspirin';
+        //  The user has selected a Country from our Drop Down List.  Let's load this country's records.
+        $http.get(currentQuery)
+                .success(function (data) {
+                    $scope.countryCharacters = data;
+                    console.debug($scope.countryCharacters);
+                })
+                .error(function (data, status, headers, config) {
+                    $scope.errorMessage = "Couldn't load the list of Incidents, error # " + status;
+                });        
     }
     
     $scope.getDrugCharacter = function(value){
@@ -112,7 +135,7 @@ function ($scope, $http, $location) {
         $scope.listOfIncidents = null;
         var limit = 10;
         var skip = 20;
-        var currentQuery = '/technikfda/query/countryCode/'+$scope.selectedCountry+'/limit/'+limit+'/skip/'+skip;
+        var currentQuery = '/technikfda/query/countryCode/'+$scope.selectedCountry.term+'/limit/'+limit+'/skip/'+skip;
         //  The user has selected a Country from our Drop Down List.  Let's load this country's records.
         $http.get(currentQuery)
                 .success(function (data) {
@@ -123,3 +146,24 @@ function ($scope, $http, $location) {
                 });        
     }
 });
+
+technikFDAApp.controller("DoughnutCtrl", 
+		function ($scope, $rootScope, $timeout, $http) {    
+			$scope.seriousIncidentLabels = ['Death', 'Congenital Anomalies', 'Disability', 'Hospitalization','Life Threatening','Unclisified'];
+			$scope.data = null;
+				
+	$rootScope.loadGraphDataForSelectedCountry= function(countryCode){
+		var currentQuery = '/technikfda/query/seriousIncidents/'+countryCode+'/aspirin';
+		 $http.get(currentQuery)
+        .success(function (data, status, headers, config) {
+            $scope.data = data;
+        })
+        .error(function (data, status, headers, config) {
+            $scope.errorMessage = "Couldn't load the list of Incidents, error # " + status;
+        });
+	}
+			
+});
+
+
+
