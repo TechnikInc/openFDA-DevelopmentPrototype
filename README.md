@@ -29,8 +29,8 @@ c.The following modern and open-source technologies are applied to this effort
 
 **Programming languages**
  - [Java](https://en.wikipedia.org/wiki/Java_programming_language) (artifact - RestUtil.java )
- - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
- - [HTML](https://en.wikipedia.org/wiki/HTML)
+ - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) (artifact - MasterDetailsCtrl.js)
+ - [HTML](https://en.wikipedia.org/wiki/HTML) (artifact - index.jsp)
 
 **Frameworks (Serverside)**
  - [Spring Web model-view-controller (MVC)](https://spring.io/guides/gs/serving-web-content/) Framework (artifact - spring-core-config.xml)
