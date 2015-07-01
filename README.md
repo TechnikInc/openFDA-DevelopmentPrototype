@@ -23,9 +23,9 @@ b. The Technik openFDA development team consisted of three resources assigned to
 c.The following modern and open-source technologies are applied to this effort
 
 **Data Sources** 
- - Drug Adverse Event data from [openFDA    API](https://open.fda.gov/api/reference/)
- - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country codes to country names
- - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country
+ - Drug Adverse Event data from [openFDA    API] (https://open.fda.gov/api/reference/) constants.java
+ - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country codes to country names CountryNameCodeRefresher.java
+ - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country constants.java
 
 **Programming languages**
  - [Java](https://en.wikipedia.org/wiki/Java_programming_language)
@@ -33,8 +33,8 @@ c.The following modern and open-source technologies are applied to this effort
  - [HTML](https://en.wikipedia.org/wiki/HTML)
 
 **Frameworks (Serverside)**
- - [Spring Web model-view-controller (MVC)](https://spring.io/guides/gs/serving-web-content/) Framework
- - [Jackson-databinding](https://github.com/FasterXML/jackson-databind/) package 
+ - [Spring Web model-view-controller (MVC)](https://spring.io/guides/gs/serving-web-content/) Framework spring-core-config.xml
+ - [Jackson-databinding](https://github.com/FasterXML/jackson-databind/) package  spring-mvc-config.xml
 
 **Frameworks (Clientside)**
  - HTML Vocabulary Extension using [AngularJS](https://angularjs.org/)
@@ -49,7 +49,7 @@ c.The following modern and open-source technologies are applied to this effort
 
 **Version Tools**
  - Web-based Git repository and source code management (SCM) using [GitHub](https://github.com/)
- - [Git Shell](http://git-scm.com/docs/git-shell) - Login shell for Git-only SSH access
+ - [Git Shell](http://git-scm.com/docs/git-shell) Login shell for Git-only SSH access
 
 **Editor**
  - [Stackedit](https://stackedit.io/) Mark down editor
@@ -63,11 +63,11 @@ f. [Travis Continous Integration System](https://travis-ci.org) is used to autom
 
 g. Used [Git](https://git-scm.com/) open source distributed version control system on [GitHub](https://github.com/) for configuration management
 
-h. Used AWS contiunous monitoring dashboard
+h. Used [Amazon CloudWatch](http://aws.amazon.com/cloudwatch/) for monitoring AWS cloud resources and the applications on AWS. 
  
 i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.
  
-j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). – The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform.
+j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform.
 
 k. Steps to install and run prototype on another machine
 **Local machine installation**
