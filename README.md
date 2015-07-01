@@ -4,7 +4,7 @@
 
 [Click here to view the prototype](http://ec2-54-175-24-134.compute-1.amazonaws.com:8080/technikfda/)
 
-This prototype allows consumers to view adverse drug event reports vy country via a simple and intuitive user interface. The [openFDA drug adverse event API](https://api.fda.gov/drug/event) was consumed RESTfully used to return data from the [FDA Adverse Event Reporting System (FAERS)](https://open.fda.gov/data/faers/) 
+This prototype allows consumers to view adverse drug event reports by country via a simple and intuitive user interface. The [openFDA drug adverse event API](https://api.fda.gov/drug/event) was consumed RESTfully used to return data from the [FDA Adverse Event Reporting System (FAERS)](https://open.fda.gov/data/faers/) 
 
 ## Approach used to create Pool Two Development prototype
 
@@ -20,6 +20,7 @@ This rapid development effort project was developed and scaled using agile metho
  - Front  End Web Developer
 
 c. The following modern and open-source technologies are applied to this effort
+
 **Data** 
  - Drug Adverse Event data from [openFDA    API](https://open.fda.gov/api/reference/)
  - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country code to    country name
