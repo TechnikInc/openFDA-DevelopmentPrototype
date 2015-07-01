@@ -7,7 +7,7 @@
 This prototype allows consumers to view adverse drug event reports by country via a simple and intuitive graphical user interface. The [openFDA drug adverse event API](https://api.fda.gov/drug/event) was consumed [Restfully](https://en.wikipedia.org/wiki/Representational_state_transfer) to return data from the [FDA Adverse Event Reporting System (FAERS)](https://open.fda.gov/data/faers/) 
 
 
-## Approach used to create Pool Two Development prototype 
+## Approach used to create Pool Two Development prototype
 
 ***We followed the U.S. Digital Services Playbook requirements***
 
@@ -68,7 +68,7 @@ h. Used [Amazon CloudWatch](http://aws.amazon.com/cloudwatch/) for monitoring AW
  
 i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.  See "Evidence" folder in GitHub Repository for artifacts. ( artifact - Technik_18F_Docker.jpeg)
  
-j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform.
+j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform. (artifact - sprint 0, sprint 1, sprint 2)
 
 k. Steps to install and run prototype on another machine
 **Local machine installation**
