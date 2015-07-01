@@ -4,7 +4,8 @@
 
 [Click here to view the prototype](http://ec2-54-175-24-134.compute-1.amazonaws.com:8080/technikfda/)
 
-This prototype allows consumers to view adverse drug event reports by country via a simple and intuitive user interface. The [openFDA drug adverse event API](https://api.fda.gov/drug/event) was consumed RESTfully used to return data from the [FDA Adverse Event Reporting System (FAERS)](https://open.fda.gov/data/faers/) 
+This prototype allows consumers to view adverse drug event reports by country via a simple and intuitive user interface. The [openFDA drug adverse event API](https://api.fda.gov/drug/event) was consumed [Restfully](https://en.wikipedia.org/wiki/Representational_state_transfer) to return data from the [FDA Adverse Event Reporting System (FAERS)](https://open.fda.gov/data/faers/) 
+
 
 ## Approach used to create Pool Two Development prototype
 
@@ -18,7 +19,7 @@ b. The Technik openFDA development team consisted of three resources assigned to
  - Dev Ops  Engineer - Configure continuous integration, continuous deployment and configured operating system level virtualization
  - Front  End Web Developer - Developed the prototype using modern techniques and frameworks. The following modern and open-source technologies are applied to this effort
 
-**Data** 
+**Data Sources** 
  - Drug Adverse Event data from [openFDA    API](https://open.fda.gov/api/reference/)
  - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country code to    country name
  - GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country
@@ -47,10 +48,11 @@ b. The Technik openFDA development team consisted of three resources assigned to
  - Web-based Git repository and source code management (SCM) using [GitHub](https://github.com/)
  - [Git Shell](http://git-scm.com/docs/git-shell) - Login shell for Git-only SSH access
 
+**Editor**
+ - [Stackedit](https://stackedit.io/) Mark down editor
+
 
 d. The prototype is deployed on [Amazon Web Services (AWS)](https://aws.amazon.com/?nc2=h_lg) Platform as a Service (PaaS).
-
-
 
 e.  Unit tests are implemented using Mockito with Junit
 
@@ -66,7 +68,7 @@ j. Used an iterative approach, where feedback informed subsequent work or versio
 
 k. Write documentation on how to install an run prototype
 
-l:The prototype and underlying platforms are openly licensed and free of charge using the MIT free software license.
+l. The prototype and underlying platforms are openly licensed and free of charge using the MIT free software license.
 
 
 ----------
