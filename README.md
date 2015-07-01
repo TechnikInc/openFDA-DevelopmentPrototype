@@ -7,7 +7,7 @@
 This prototype allows consumers to view adverse drug event reports by country via a simple and intuitive graphical user interface. The [openFDA drug adverse event API](https://api.fda.gov/drug/event) was consumed [Restfully](https://en.wikipedia.org/wiki/Representational_state_transfer) to return data from the [FDA Adverse Event Reporting System (FAERS)](https://open.fda.gov/data/faers/) 
 
 
-## Approach used to create Pool Two Development prototype
+## Approach used to create Pool Two Development prototype 
 
 ***We followed the U.S. Digital Services Playbook requirements***
 
