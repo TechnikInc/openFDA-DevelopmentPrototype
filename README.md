@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/krishnachaganti/travis_test.svg?branch=master)](https://travis-ci.org/krishnachaganti/technikfda)
 
-# OpenFDA Adverse Drug Event Reports by Country - Technik Inc. 
+# OpenFDA Adverse Drug Event Reports by Country - [Technik, Inc.](http://www.technikinc.com)
 
 [Click here to view the prototype](http://ec2-54-175-24-134.compute-1.amazonaws.com:8080/technikfda/)
 
