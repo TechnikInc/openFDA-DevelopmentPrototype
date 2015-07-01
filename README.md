@@ -10,16 +10,46 @@ This prototype allows consumers to view adverse drug event reports vy country vi
 
 ***We followed the U.S. Digital Services Playbook requirements***
 
-a. Ms. Alexa Tsui was the assigned leader (Product Manager) with authority, responsibility and accountability for the quality of the prototype submitted.
+a. Mr. Satish Venkatesan was the assigned leader (Product Manager) with authority, responsibility and accountability for the quality of the prototype submitted.
 
-b. The Technik openFDA design prototype team consisted of three resources assigned to the following Design Pool Labor categories from 18F Agile Labor Categories. Attachment C is updated accordingly. 
-This rapid development effort project was developed and scaled using agile methodologies. The primary roles as they pertain to our chosen labor categories are as follows: 
-- Category 1: Product Manager, responsible for defining and prioritizing the requirements, developing the vision and roadmap and working with Web Designer to optimize our design tools & techniques.
-- Category 3: Interaction Designer/User Researcher/Usability Tester, responsible for creating artifacts such as usability testing plan, testing scripts and usability testing report. Conduct stakeholder interviews, user requirements analysis, conceptual modeling and prototype building. 
-- Category 6: Front End Web Designer, responsible for developing interface experiences for enterprise desktop and mobile applications and improving the look, feel, quality and performance stability.
+b. The Technik openFDA development prototype team consisted of three resources assigned to the following Development Pool Labor categories from 18F Agile Labor Categories. Attachment C is updated accordingly. 
+This rapid development effort project was developed and scaled using agile methodologies. The chosen labor categories are as follows: 
+
+ - Technical Architect
+ - Dev Ops  Engineer
+ - Front  End Web Developer
+
+c. The following modern and open-source technologies are applied to this effort
+**Data** 
+ - Drug Adverse Event data from [openFDA    API](https://open.fda.gov/api/reference/)
+ - Lightweight data packages from [data.okfn.org](http://data.okfn.org/) to translate country code to    country name
+- GeoNames geographical database from [geonames.org](http://www.geonames.org)  to retreive country flag images for the displayed country
+
+Programming languages
+ - Java
+ - Javascript
+ - HTML 
+
+Frameworks (Serverside)
+ - Spring
+ - Jackson-databind 
+
+Frameworks (Clientside)
+ - Angular JS
+ - jQuery
+Testing tools
+ - jUnit
+ - Mokito
+
+Build Tools
+ - Gradle
+
+Version Tools
+ - GitHub, 
+ - Git shell
 
 
-c. A group of representative users was assembled and their feedback was used to drive the design of this prototype. Initial interviews identified typical activities that users were interested in performing. Wireframe mockups were sketched and presented to the users for critique. Users were observed while trying to use the functional prototype and their challenges were translated into enhancements. See "Evidence" folder in GitHub repository for artifacts.
+
 
 d. The following three collaborative human-centered design techniques and tools supported the development of this prototype with an agile process to determine user needs: See "Evidence" folder in GitHub Repository for artifacts. 
 - Conducted user interviews to identify audience personas and representative use cases (contextual inquiry). (artifact-Technik_18F_brainstrom.jpeg) 
