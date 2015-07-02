@@ -28,7 +28,6 @@
     <script src="/technikfda/resources/core/js/MasterDetailCtrl.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(document).ready(function (){
-      initiateTypeAhead();
     })
     </script>
   </head>
@@ -45,18 +44,14 @@
                     <div class="panel-body">
                         <div class="search_bar">
                             <form class="form-inline">
-                              
                               <div class="form-group">
-                                <label class="sr-only" for="search_brand">Drug Name</label>
+                                <label class="sr-only" for="search_drug">Drug Name</label>
                                 <input ng-model="searchDrugField" type="text" 
                                 	class="form-control" 
                                 	id="search_drug" 
                                 	placeholder="Drug name (e.g. aspirin)" 
                                 	value="Aspirin" 
-                                	autocomplete="off"> 
-                              </div>
-                              <div class="form-group">
-                                Input medicinal product to view related adverse event summaries.
+                                	autocomplete="off">
                               </div>
                               <!--button type="submit" class="btn btn-default">Search</button-->
                             </form>
@@ -67,17 +62,17 @@
                             <div id="divMasterView" >
                                <div id="{{country.term}}" 
                                			class="cssOneCompanyRecord" 
-                               			ng-class="{cssCompanySelectedRecord: country.term == selectedCountry}" 
+                               			ng-class="{cssCompanySelectedRecord: country == selectedCountry}" 
                                			ng-repeat="country in countries" 
                                			ng-click="selectCountry(country);">
                                     <div class="cssCompanyName">{{country.countryName}}</div>
                                      <img src="{{country.imageSrc}}"
-                                       title="{{country.countryName}}"
+                                       title="{{country.countryName}}" 
                                        class="cssCustomerIcon" />
                                 </div>
                             </div>
                             <div id="divDetailView">
-                              <h3>Adverse events involving aspirin in {{selectedCountry.countryName}}</h3>
+                              <h3>Adverse events involving {{searchDrugField}} in {{selectedCountry.countryName}}</h3>
                               <section  ng-controller="DoughnutCtrl">
   	                            <canvas id="doughnut" 
   	                            		class="chart chart-doughnut" 
