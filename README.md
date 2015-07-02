@@ -71,6 +71,7 @@ i. Used [Docker container](https://www.docker.com/), an open platform for to dep
 j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform. (artifact - sprint 0, sprint 1, sprint 2)
 
 k. Steps to install and run prototype on another machine
+
 **Local machine installation**
 •	Install [Apache Tomcat 6.0]( https://tomcat.apache.org/tomcat-6.0-doc/deployer-howto.html) open-source web server on local machine
 •	Manually deploy Web application Archive (WAR) file in Tomcat (use technikfda.war file in GitHub repository)
