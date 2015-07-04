@@ -6,12 +6,12 @@ package gov.fda.util;
 public enum SeriousEventType {
 	
 	ALL(0,"All",""),
-	DEATH(1, "Death", "&count=seriousnessdeath"),
-	CONG_ANOMALIES(2,"Congenital Anomalies","&count=seriousnesscongenitalanomali"),
-	DISABILITY(3, "Disability", "&count=seriousnessdisabling"),
-	HOSPITALIZATION(4, "Hospitalization", "&count=seriousnesshospitalization"),
-	LIFE_THREATENING(5, "Life Threatening", "&count=seriousnesslifethreatening"),
-	UNCLASSIFIED(6, "Unclisified", "&count=seriousnessother");
+	DEATH(1, "Death", "seriousnessdeath"),
+	CONG_ANOMALIES(2,"Congenital Anomalies","seriousnesscongenitalanomali"),
+	DISABILITY(3, "Disability", "seriousnessdisabling"),
+	HOSPITALIZATION(4, "Hospitalization", "seriousnesshospitalization"),
+	LIFE_THREATENING(5, "Life Threatening", "seriousnesslifethreatening"),
+	UNCLASSIFIED(6, "Unclisified", "seriousnessother");
 	
 	private int typeId;
 	private String typeValue;

@@ -112,6 +112,10 @@ body {
   color: #fff;
 }
 
+.form-inline .form-control.tt-input{
+    width: 290px;
+}
+
 /* ==============
     MOBILE: Menu
    ============== */

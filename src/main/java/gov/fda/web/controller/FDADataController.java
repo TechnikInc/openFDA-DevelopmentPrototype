@@ -25,13 +25,6 @@ public class FDADataController {
 	
 	@Autowired
     QueryService queryService;
-
-
-	@RequestMapping(value = "/countries", method = RequestMethod.GET)
-	public List<CountryResult> getCountriesAndIncidents() {
-		logger.debug("getCountiesAndIncidents() is executed!");
-		return queryService.getNumberOfIncidentsByCounty();
-	}
 	
 	@RequestMapping(value = "/countries/{drugName}", method = RequestMethod.GET)
 	public List<CountryResult> getCountriesAndIncidents(@PathVariable String drugName) {
@@ -39,14 +32,6 @@ public class FDADataController {
 		return queryService.getNumberOfIncidentsByCountyAndDrugName(drugName);
 	}
 	
-	@RequestMapping(value = "/countryCode/{code}/limit/{sizeLimit}/skip/{skipSize}", method = RequestMethod.GET)
-	public String getCountryIncident(@PathVariable String code,
-			@PathVariable int sizeLimit, @PathVariable int skipSize) {
-		logger.debug("getCountryIncident() is executed! Code :"+code);
-		logger.debug("getCountryIncident() is executed! limitSize :"+sizeLimit);
-		logger.debug("getCountryIncident() is executed! skipSize :"+skipSize);
-		return queryService.getIncidentsByCountry(code, sizeLimit, skipSize);
-	}
 	
 	@RequestMapping(value = "/seriousIncidents/{countryCode}/{drugName}", method = RequestMethod.GET)
 	@ResponseBody()
@@ -55,6 +40,13 @@ public class FDADataController {
 		logger.debug("getCountrySeriousIncidentCounts() is executed! countryCode :"+countryCode);
 		logger.debug("getCountrySeriousIncidentCounts() is executed! drugName :"+drugName);
 		return queryService.getSeriousIncidentsCounts(countryCode, drugName);
+	}
+	
+	@RequestMapping(value = "/dataLastUpdated", method = RequestMethod.GET)
+	@ResponseBody()
+	public String dataLastUpdated() {
+		logger.debug("dataLastUpdated() is executed!");
+		return queryService.getDataLastUpdated();
 	}
 
 }

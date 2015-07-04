@@ -57,8 +57,8 @@ public class QuerySerivceImplTest
 		MockRestServiceServer mockServer = 
 				MockRestServiceServer.createServer(restTemplate);
 		//List<Result> results = queryService.getNumberOfIncidentsByCounty();
-		String queryString =
-				Constants.FDA_BASE_URL+Constants.AND_OPERATION+Constants.DESEASE_AND_NUM_INCIDENTS_QUERY;
+		//String queryString =
+		//		Constants.FDA_BASE_URL+Constants.AND_OPERATION+Constants.DESEASE_AND_NUM_INCIDENTS_QUERY;
 //		when(restTemplate.getForObject(queryString, DeseaseAndInsidents.class)).thenReturn(setupResults());
 		
 	   // when(restTemplate.getForObject(queryString, Any.class)).thenReturn(setupResults());

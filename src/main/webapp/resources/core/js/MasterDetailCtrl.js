@@ -7,53 +7,6 @@ technikFDAApp.config(['$httpProvider', function ($httpProvider) {
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
 
-technikFDAApp.filter('sumByKey', function () {
-    return function (data, key) {
-        if (typeof (data) === 'undefined' || typeof (key) === 'undefined') {
-            return 0;
-        }
-        var sum = 0;
-        for (var i = data.length - 1; i >= 0; i--) {
-            sum += parseInt(data[i][key]);
-        }
-        return sum;
-    };
-})
-
-technikFDAApp.filter('customSum', function () {
-    return function (listOfProducts, key) {
-        //  Count how many items are in this order
-        var total = 0;
-        angular.forEach(listOfProducts, function (product) {
-            //            alert(product + "." + key);
-            total += eval("product." + key);
-        });
-        return total;
-    }
-});
-
-technikFDAApp.filter('countItemsInOrder', function () {
-    return function (listOfProducts) {
-        //  Count how many items are in this order
-        var total = 0;
-        angular.forEach(listOfProducts, function (product) {
-            total += product.Quantity;
-        });
-        return total;
-    }
-});
-
-technikFDAApp.filter('orderTotal', function () {
-    return function (listOfProducts) {
-        //  Calculate the total value of a particular Order
-        var total = 0;
-        angular.forEach(listOfProducts, function (product) {
-            total += product.Quantity * product.UnitPrice;
-        });
-        return total;
-    }
-});
-
 technikFDAApp.controller('MasterDetailCtrl',
 function ($scope, $rootScope, $http, $location) {
 
@@ -63,6 +16,7 @@ function ($scope, $rootScope, $http, $location) {
     $scope.listOfCountrys = null;
     
     $rootScope.selectedCountry = null;
+    $scope.fdaDatasetDate = null;
     
 
     //  When the user selects a "Country" from our MasterView list, we'll set the following variable.
@@ -82,7 +36,8 @@ function ($scope, $rootScope, $http, $location) {
                 $rootScope.selectedCountry = $scope.countries[0];
 
                 //  Load the list of Orders, and their Products, that this Country has ever made.
-                //$scope.loadIncidents();
+
+                 $scope.loadDataLastUpdated()
                  $rootScope.loadGraphDataForSelectedCountry($scope.selectedCountry.term, $scope.searchDrugField);
             }
         })
@@ -97,6 +52,36 @@ function ($scope, $rootScope, $http, $location) {
         $scope.searchDrugField = $('#search_drug').val();
         $rootScope.loadGraphDataForSelectedCountry($scope.selectedCountry.term, $scope.searchDrugField);
     }
+    
+    $scope.loadCoutryData = function(){
+    	//alert('called to load country data');
+    	$scope.searchDrugField = $('#search_drug').val();
+    	if($scope.searchDrugField == ''){
+    		$scope.searchDrugField = 'Aspirin';
+    	}
+	    $http.get('/technikfda/query/countries/'+$scope.searchDrugField)
+	
+	    .success(function (data) {
+	        $scope.countries = data;
+	
+	        if ($scope.countries.length > 0) {
+	
+	            //  If we managed to load more than one Country record, then select the first record by default.
+	            //  This line of code also prevents AngularJS from adding a "blank" <option> record in our drop down list
+	            //  (to cater for the blank value it'd find in the "selectedCountry" variable)
+	            $scope.selectedCountry = $scope.countries[0];
+	            $rootScope.selectedCountry = $scope.countries[0];
+	
+	            //  Load the list of Orders, and their Products, that this Country has ever made.
+	            //$scope.loadIncidents();
+	             $rootScope.loadGraphDataForSelectedCountry($scope.selectedCountry.term, $scope.searchDrugField);
+	        }
+	    })
+	    .error(function (data, status, headers, config) {
+	        $scope.errorMessage = "Couldn't load the list of Countrys, error # " + status;
+	    });
+    
+   }
 
     
     $scope.getDrugCharacter = function(value){
@@ -129,9 +114,22 @@ function ($scope, $rootScope, $http, $location) {
                 });        
     }
     
+    $scope.loadDataLastUpdated = function () {
+     / * Query for last data updated at FDA site */
+        var currentQuery = '/technikfda/query/dataLastUpdated';
+        //  The user has selected a Country from our Drop Down List.  Let's load this country's records.
+        $http.get(currentQuery)
+                .success(function (data) {
+                    $scope.fdaDatasetDate = data;
+                })
+                .error(function (data, status, headers, config) {
+                    $scope.errorMessage = "Couldn't load the list of Incidents, error # " + status;
+                });        
+    }
+    
     $scope.selectedDrug = function(drugName){
     	$scope.searchDrugField = drugName;
-    	console.debug("Selected Drug :"+drugName);
+    	//console.debug("Selected Drug :"+drugName);
     }
 });
 

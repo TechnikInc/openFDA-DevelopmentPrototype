@@ -1,12 +1,16 @@
 package gov.fda.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MetaData {
 	
+	@JsonProperty("disclaimer")
 	private String disclaimer;
+	@JsonProperty("license")
 	private String license;
+	@JsonProperty("last_updated")
 	private String last_updated;
 	
 	

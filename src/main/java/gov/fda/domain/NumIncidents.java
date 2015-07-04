@@ -6,13 +6,15 @@ import java.util.Comparator;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class NumIncidents {
+	@JsonProperty("meta")
 	private MetaData metaData;
+	@JsonProperty("results")
 	private ArrayList<Result> results;
-
 	public MetaData getMetaData() {
 		return metaData;
 	}

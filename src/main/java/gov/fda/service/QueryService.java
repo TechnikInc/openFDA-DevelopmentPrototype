@@ -8,13 +8,10 @@ import java.util.List;
 
 public interface QueryService 
 {
-	public List<Result> getNumberOfIncidentsByDrug();
-	
-	public List<CountryResult> getNumberOfIncidentsByCounty();
-	
-	public String getIncidentsByCountry(String occurCountry, int skipIncidents, int queryIncidents);   
-	
+ 
 	public List<CountryResult> getNumberOfIncidentsByCountyAndDrugName(String drugName);
 	
 	public List<Integer> getSeriousIncidentsCounts(String occurCountry, String drugName);
+	
+	public String getDataLastUpdated();
 }
