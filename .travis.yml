@@ -1,15 +1,18 @@
 language: java
 jdk:
 - oraclejdk7
-branches: 
+branches:
   except:
   - "/^build-[0-9a-z\\-]*/"
 script: gradle awsPackage
+notifications:
+  email:
+  - technikfdacode@gmail.com
 deploy:
 - provider: s3
   access_key_id: AKIAIN4EOXPZMBUAO44Q
   secret_access_key: &1
-    secure: A9vwEkdTGU5PdLeBTjpoiJko1jAMqa1bYHmILD8rK6f428lMyhaBXbeYv6ALbvxpF7OYJ+fdPGhRRRG6UU37b29VA1ClE8opwUQUW/GPHPSQtXV1+2c0Vi3fKcVEJxxnCbOzoH4G/nJaRag3tvmHrbgUZ50gk+oQI8mG9sdjEtE+2se58cusB72m1g8BJyljawYSS4I9c6V5U6wDr6sLD3PfUPWCkPgKtYKYbTxxZqDg1Hht6QNxpWuSgkSu4WkKMpz1m+ceGLZM6W0dE+Pdbf3hsBlGI5Bohuv9NFyj16cdTMBH3oFpMunsaIeh3cLu1sAi4ahyRAqumdLls5BfPrfNv96FVvweZU2sWZBrml8FAscEvwA3mgG0lSnL8kfWTuh9BzewqS5v+BptLlsL2vptjpT8oRkSqZWCrrM6BUgubmtxdrqRMJnnCSradbUIhZGYVLt6ogJJVFdNQ4r/o6Wvy3UcJwL4B6c228cFQ+6V/vcB1W4PNIqsi6dEwY0HyivDk+Q/0Y97T6Vx6Vjl2jabTkdIO+CHtWLKqie51HeRhOl7lpkDKfwkz6rd5Qox29Hjihzb+swMUd1viDW6n7z8nSZzPWi4IxkMlJBfkzpcUeggNmuRNir3JVHyrP8I9d7L9KVimxhEzhwm0n0EXCRCFWudGYqSGrNORgbz4e0=
+    secure: VZM5ERH/TSL9A03eywkmwIownNc6sfllVkRTZEjWPhM8EuwyZoG2Me+DQpTPbwwHIm96EY69AES3D3XmNcgRr+c5wFrDqmVr0URVk04fWcEFFl2n2eDYq3J+ZQjshgY/LESXeIKa8LDNr437onG67WTVqIF4P2NF0OR27MALl7pYZONwJjtmzx/j8ipCdM7sc8kn2AzQEoTVjNSO9YEhqU5Fq8Huj/rEKG+FXzLh9e9HQUfxriClc3PgA0m4ZFJRKj2ZfzuDG15UsKEa1kPyE+tUV38HycdJwjKK8lvidD3wojQFDdVRHd0qMk4Rp19B2pk3bSUIxyk8RDUDV1QTx3aC5GGzD39O+pJDz4fwj998EvJ7vMH2OiwCsCxOdQjTLnB/NZMZQtBFPbhI8QBHdmHr7dgBgqJPD/nYsuDCjOjgWbmdPbue9FsqYcuh5x7dHD1pPBrKwP2/VxXeN3FrFrxWN+jYhQlEZ08EByj5Bk/EFkDiSNFJKb/UJjKhtf3/NASovOlqWpCc8D2Nv9tynNDxHMI7zscEkbd9QcgGs7L1gu1L27Y60n1O7ThT1EJ4nG/HRD/p6M2UhyoYUI7MWFMy+M8kCjiweIcbbE5pVkb/WlAduAJN2YItutHDZOj0We4pAqWC1xI+5CKT2iiouz9J9hZ+RW9Jir38FkUu69c=
   local_dir: build/distributions
   skip_cleanup: true
   on: &2
@@ -18,14 +21,10 @@ deploy:
   upload_dir: latest
 - provider: codedeploy
   access_key_id: AKIAIN4EOXPZMBUAO44Q
-  secret_access_key: &1
-    secure: A9vwEkdTGU5PdLeBTjpoiJko1jAMqa1bYHmILD8rK6f428lMyhaBXbeYv6ALbvxpF7OYJ+fdPGhRRRG6UU37b29VA1ClE8opwUQUW/GPHPSQtXV1+2c0Vi3fKcVEJxxnCbOzoH4G/nJaRag3tvmHrbgUZ50gk+oQI8mG9sdjEtE+2se58cusB72m1g8BJyljawYSS4I9c6V5U6wDr6sLD3PfUPWCkPgKtYKYbTxxZqDg1Hht6QNxpWuSgkSu4WkKMpz1m+ceGLZM6W0dE+Pdbf3hsBlGI5Bohuv9NFyj16cdTMBH3oFpMunsaIeh3cLu1sAi4ahyRAqumdLls5BfPrfNv96FVvweZU2sWZBrml8FAscEvwA3mgG0lSnL8kfWTuh9BzewqS5v+BptLlsL2vptjpT8oRkSqZWCrrM6BUgubmtxdrqRMJnnCSradbUIhZGYVLt6ogJJVFdNQ4r/o6Wvy3UcJwL4B6c228cFQ+6V/vcB1W4PNIqsi6dEwY0HyivDk+Q/0Y97T6Vx6Vjl2jabTkdIO+CHtWLKqie51HeRhOl7lpkDKfwkz6rd5Qox29Hjihzb+swMUd1viDW6n7z8nSZzPWi4IxkMlJBfkzpcUeggNmuRNir3JVHyrP8I9d7L9KVimxhEzhwm0n0EXCRCFWudGYqSGrNORgbz4e0=
+  secret_access_key: *1
   bucket: technikfda.bucket.s3
   key: latest/MyApp.zip
   bundle_type: zip
   application: MyApp
-  deployment_group: MyDeploymentGroup
+  deployment_group: ''
   on: *2
-notifications:
-  email:
-  - technikfdacode@gmail.com
