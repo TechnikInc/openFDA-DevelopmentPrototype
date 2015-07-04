@@ -26,5 +26,5 @@ deploy:
   key: latest/MyApp.zip
   bundle_type: zip
   application: MyApp
-  deployment_group: ''
+  deployment_group: MyDeploymentGroup
   on: *2
