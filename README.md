@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/TechnikInc/openFDA-DevelopmentPrototype.svg?branch=master)](openFDA-DevelopmentPrototype.svg)
+[![Build Status](https://travis-ci.org/TechnikInc/openFDA-DevelopmentPrototype.svg?branch=master)](https://travis-ci.org/TechnikInc/openFDA-DevelopmentPrototype)
 
 
 
