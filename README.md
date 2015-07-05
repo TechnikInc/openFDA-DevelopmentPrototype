@@ -66,7 +66,10 @@ g. Used [Git](https://git-scm.com/) open source distributed version control syst
 
 h. Used [Amazon CloudWatch](http://aws.amazon.com/cloudwatch/) for monitoring AWS cloud resources and the applications on AWS. See "Evidence" folder in GitHub Repository for artifacts. ( artifact - Technik_18F_Amazon_Cloud_Watch.jpeg)
  
-i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.  See "Evidence" folder in GitHub Repository for artifacts. ( artifact - Technik_18F_Docker.jpeg)
+i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.  See "Evidence" folder in GitHub Repository for artifacts. ( artifact - Technik_18F_Docker.jpeg, Dockerfile  and  https://registry.hub.docker.com/u/krishnachaganti/openfda-developmentprototype/)
+    1. one can run the docker image using docker run -p 8082:8080 -d krishnachaganti/openfda-developmentprototype which can use  get the latest image of this project and run in their container.
+    2. one can build the docker image using the Docker file and technikfda.war file , copy them into a single directory then run this command to build image locally using this command ' docker build -t technikfda/tomcat . '  then to run the image in the local docker container 'docker run -p 8081:8080 techknikfda/tomcat'.  this will run this application in the docker container.
+    
  
 j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform. (artifact - sprint 0, sprint 1, sprint 2)
 
