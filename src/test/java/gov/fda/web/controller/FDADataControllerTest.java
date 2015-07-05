@@ -45,44 +45,58 @@ public class FDADataControllerTest {
 	@Test
 	public void test_country_and_reported_count()
 	{
-		String shortName = "US";
+		String countryShortName = "US";
 		int totalIncidents = 10;
 		String countryName = "United States";
-		CountryResult country = CountryResultTestHelper.createDTO(shortName, totalIncidents, countryName);
-		CountryResult expectedCountry = CountryResultTestHelper.createDTO(shortName, totalIncidents, countryName);
+		String drugName = "Aspirin";
+		CountryResult country = CountryResultTestHelper.createDTO(countryShortName, totalIncidents, countryName);
+		CountryResult expectedCountry = CountryResultTestHelper.createDTO(countryShortName, totalIncidents, countryName);
 		
 		// Mock expected countries
-	    /*when(queryServiceMock.getNumberOfIncidentsByCounty()).thenReturn(Arrays.asList(expectedCountry));
+	    when(queryServiceMock.getNumberOfIncidentsByCountyAndDrugName(drugName )).thenReturn(Arrays.asList(expectedCountry));
 
 		
-		List<CountryResult> results = dataControllerMock.getCountriesAndIncidents();
+		List<CountryResult> results = dataControllerMock.getCountriesAndIncidents(drugName);
 		// verify results null;
 		assertNotNull(results);
 		// verify results size
 		assertEquals(1, results.size());
 		// verify result content
-		verifyCountry(country, results.get(0));*/
+		verifyCountry(country, results.get(0));
 	}
 	
 
 	@Test
-	public void test_incident_in_a_country()
+	public void testSeriousIncidentsCountForACountryAndDrugName()
 	{
-		String  result = "US";
-		String expected = "US";
+		String countryName = "US";
+		String drugName = "Aspirin";
+		List<Integer> seriounsIncidents = new ArrayList<Integer>();
 		
-		String countryShortName  = "US";
-		int limitResults = 1;
-		int skipResults = 1;
+		seriounsIncidents.add(new Integer(110));
+		seriounsIncidents.add(new Integer(70));
+		seriounsIncidents.add(new Integer(60));
+		seriounsIncidents.add(new Integer(50));
+		seriounsIncidents.add(new Integer(150));
+		seriounsIncidents.add(new Integer(0));
+		
+	    List<Integer> expected = new ArrayList<Integer>();
+	    expected.add(new Integer(110));
+	    expected.add(new Integer(70));
+	    expected.add(new Integer(60));
+	    expected.add(new Integer(50));
+	    expected.add(new Integer(150));
+	    expected.add(new Integer(0));
+		
 		
 		// Mock expected countries
-	   // when(queryServiceMock.getIncidentsByCountry(countryShortName, skipResults,limitResults )).thenReturn(expected);
+	   when(queryServiceMock.getSeriousIncidentsCounts(countryName, drugName)).thenReturn(expected);
 		
-		//String results = dataControllerMock.getCountryIncident(countryShortName, skipResults,limitResults);
+		List<Integer> results = dataControllerMock.getCountrySeriousIncidentCounts(countryName, drugName);
 		// verify results not null;
-		//assertNotNull(results);
+		assertNotNull(results);
 		// verify results content
-		//assertEquals(results, expected);
+		assertEquals(results, expected);
 	}
 	
 	private void verifyCountry(CountryResult result, CountryResult original)
