@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/krishnachaganti/travis_test.svg?branch=master)](https://travis-ci.org/krishnachaganti/openFDA-DevelopmentPrototype)
+[![Build Status](https://travis-ci.org/krishnachaganti/openFDA-DevelopmentPrototype.svg?branch=master)](https://travis-ci.org/krishnachaganti/openFDA-DevelopmentPrototype)
+
+
 
 # OpenFDA Adverse Drug Event Reports by Country - [Technik, Inc.](http://www.technikinc.com) 
 
