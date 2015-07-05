@@ -12,7 +12,8 @@ deploy:
 - provider: releases
   api_key:
     secure: GbETLby5i/ndyno7306i5r5qUKXITCYMWZ0vAc0n6d26Lqru1HvP7vIbairDyXBOYXEccUaiJQhJ9HZ8Ua6RLucKBjYhpl11aUgP/vxp8Oe9RQFc+cFYcDhZK+83dfCaGS4zwJvwZjs+Bmu1C/MFji4ZqKBRYliNtJ80xouUNUhsk8UBRuEFZR/biMgWv13Wh9DkboS5bbk4V2G/pIMsuwX1mVoXszOE6u+Su5NuTXxgQkjv1Q3M5T32qS9NrT/F9Lism2+lbegyht4RO4tlVGUCF6E+CKHn7/2jEcyUTYhPghE1t/2UjnxeREHEyykw6/6DpH2UfRJZ3NVEq72DRAWt0o0JUCI2CWc6mRA81N1GnEsiJM5UkXT9Mc8oNjSPQy8FCBJUeoe16AYLVP9j1zRlqH4JfWmuLYcHb534b24O7TEGmvpJmSGMSblQS8uICE1Fq8VPjRRbcEgjIkggC6CaI2If8UTLmiTAA/9ZTish3yU2zzQh38QHo4pYbm82QVrj2Y5HK3oMK/id9Hw3CNS3cQi7bJqNrDiInyVxqLvvb1Qmgqr8Ufauh/47vGov+TuI0YuD7cqCsaFGc4+TgQ0iERDGQBKRukqxYwmORtsEfE9ZPLSNzpVIbJx/BZ+g7G8NTRVq82+soKoUTEQ4pqttqMtYuzeAXPEzot1KYRA=
-  file: technikfda.war
+  clean_up: false
+  file: build/libs/technikfda.war
   on:
     repo: TechnikInc/openFDA-DevelopmentPrototype
     tags: true
