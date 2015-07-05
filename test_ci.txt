@@ -1,2 +1,2 @@
-when you change the number in this file it automatically start trvis ci process
+when you change the number in this file it automatically starts the trvis ci process. You can view the progress by clicking the travis CI badge.
 testing ci count: 1
