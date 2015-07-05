@@ -4,7 +4,9 @@
 
 # OpenFDA Adverse Drug Event Reports by Country - [Technik, Inc.](http://www.technikinc.com) 
 
-[Click here to view the prototype](http://ec2-54-175-24-134.compute-1.amazonaws.com:8080/technikfda/)
+[Click here to view the prototype where application running in AWS without docker container](http://ec2-54-172-87-25.compute-1.amazonaws.com:8080/technikfda/)
+
+[Click here to view the prototype where application running in AWS in docker container container](http://ec2-54-172-87-25.compute-1.amazonaws.com:8080/technikfda/)
 
 This prototype allows consumers to view adverse drug event reports by country via a simple and intuitive graphical user interface. The [openFDA drug adverse event API](https://open.fda.gov/drug/event) was consumed [Restfully](https://en.wikipedia.org/wiki/Representational_state_transfer) to return data from the [FDA Adverse Event Reporting System (FAERS)](https://open.fda.gov/data/faers/) 
 
