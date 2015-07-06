@@ -98,4 +98,4 @@ The major steps include
 
 l. The prototype and underlying platforms are openly licensed and free of charge using the MIT free software license.
 
-----------
+---------- 
