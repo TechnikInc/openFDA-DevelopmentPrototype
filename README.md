@@ -72,12 +72,7 @@ h. Used [Amazon CloudWatch](http://aws.amazon.com/cloudwatch/) for monitoring AW
  
 i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.  See "Evidence" folder in GitHub Repository for artifacts. ( artifact - Technik_18F_Docker.jpeg, Dockerfile  and  https://registry.hub.docker.com/u/krishnachaganti/openfda-developmentprototype/)
 
-    1. To get the most recent Docker image and run in container - Install Docker and run the docker image using docker run -p 8082:8080 -d krishnachaganti/openfda-developmentprototype 
-    
-    2. To build the docker image -  Copy the Docker file and technikfda.war file into a single directory then run this command to build image locally  - ' docker build -t technikfda/tomcat' To run the image in the local docker container use  'docker run -p 8081:8080 techknikfda/tomcat'.  this will run this application in the docker container.
-    
-
- -[Click here to view the prototype where application running in AWS in docker container](http://ec2-54-172-87-25.compute-1.amazonaws.com:8081/technikfda/)
+[Click here to view the prototype where application running in AWS in docker container](http://ec2-54-172-87-25.compute-1.amazonaws.com:8081/technikfda/)
  
 j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform. (artifact - sprint 0, sprint 1, sprint 2)
 
