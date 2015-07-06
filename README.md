@@ -76,6 +76,9 @@ i. Used [Docker container](https://www.docker.com/), an open platform for to dep
     
     2. one can build the docker image using the Docker file and technikfda.war file , copy them into a single directory then run this command to build image locally using this command ' docker build -t technikfda/tomcat . '  then to run the image in the local docker container 'docker run -p 8081:8080 techknikfda/tomcat'.  this will run this application in the docker container.
     
+    +[Click here to view the prototype where application running in AWS in docker container](http://ec2-54-172-87-25.compute-1.amazonaws.com:8081/technikfda/)
+
+    
     
  
 j. Feedback from user tests led to subsequent work and an updated prototype. (Ex. users suggested visual aesthetic enhancements such as displaying country flags in addition to the country names). The feature was incorporated in subsequent releases. We also used GitHub issues, labels and milestones as our collaboration platform. (artifact - sprint 0, sprint 1, sprint 2)
