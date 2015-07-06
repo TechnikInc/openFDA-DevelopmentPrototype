@@ -72,9 +72,9 @@ h. Used [Amazon CloudWatch](http://aws.amazon.com/cloudwatch/) for monitoring AW
  
 i. Used [Docker container](https://www.docker.com/), an open platform for to deploy the application and all of its dependencies.  See "Evidence" folder in GitHub Repository for artifacts. ( artifact - Technik_18F_Docker.jpeg, Dockerfile  and  https://registry.hub.docker.com/u/krishnachaganti/openfda-developmentprototype/)
 
-    1. one can run the docker image using docker run -p 8082:8080 -d krishnachaganti/openfda-developmentprototype which can use  get the latest image of this project and run in their container.
+    1. To get the most recent Docker image and run in container - Install Docker and run the docker image using docker run -p 8082:8080 -d krishnachaganti/openfda-developmentprototype 
     
-    2. one can build the docker image using the Docker file and technikfda.war file , copy them into a single directory then run this command to build image locally using this command ' docker build -t technikfda/tomcat . '  then to run the image in the local docker container 'docker run -p 8081:8080 techknikfda/tomcat'.  this will run this application in the docker container.
+    2. To build the docker image -  Copy the Docker file and technikfda.war file into a single directory then run this command to build image locally  - ' docker build -t technikfda/tomcat' To run the image in the local docker container use  'docker run -p 8081:8080 techknikfda/tomcat'.  this will run this application in the docker container.
     
 
  -[Click here to view the prototype where application running in AWS in docker container](http://ec2-54-172-87-25.compute-1.amazonaws.com:8081/technikfda/)
