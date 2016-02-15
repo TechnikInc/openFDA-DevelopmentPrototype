@@ -96,6 +96,6 @@ The major steps include
 •	Edit .travis.yml file to point to the correct AWS instances and access keys 
 •	Track and monitor the status of your deployments through [Amazon CloudWatch](http://aws.amazon.com/cloudwatch/) real-time monitoring tools.
 
-l. The prototype and underlying platforms are openly licensed and free of charge using the MIT free software license
+l. The prototype and underlying platforms are openly licensed and free of charge using the MIT free software license.
 
 ---------- 
